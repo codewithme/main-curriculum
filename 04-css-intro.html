@@ -1,0 +1,294 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>How CSS works</title>
+
+		<meta name="description" content="How CSS works">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="small">
+					<h1 class="opening special-margin">How CSS works</h1>
+					<div class="small-logo-container disappear">
+						<img src="images/basic-logo-tan-bg.png"/>
+						<div class="copyright">&copy; <span>2013</span></div>
+					</div>
+					<div class="notes">
+						<p>Let’s try one more analogy, just to explain how fluid HTML, CSS can be:</p>
+						<p>Think of a webpage as a play.  Say, Shakespeare’s Romeo and Juliet:</p>
+						<p>The HTML is the script -- the lines the actors and actresses say as the play progresses. It’s “In Fair Verona, where we lay our scene”, it’s “What's in a name? that which we call a rose / By any other name would smell as sweet”. </p>
+						<p>The CSS is the costume and set design -- how everyone looks, and how the set looks. It’s the poofy shoulders, the cobblestone street, the oil lamps.</p>
+					</div>
+				</section>
+				
+				<section class="small">
+					<img src="images/romeo1.jpg" />
+					<div class="notes">
+						<p>Two people can take the same content and style it very differently. In terms of Romeo and Juliet, you have the classic 1968 version, with swords, tunics and cobblestone streets.</p>
+					</div>
+				</section>
+				
+				<section class="small">
+					<img src="http://img101.fansshare.com/photos/paulrudd/romeo-and-julia-still-romeo-and-juliet-745865763.jpg"/>
+					<div class="notes">
+						<p>And you have the 1996 version with Leonardo di Caprio, guns and suits. The two movies have the exact same lines, but they look and feel very different. That’s what CSS can do to HTML.</p>
+						<p>So all right, you already know how to write some HTML tags, how do we write CSS? </p> 
+						<p>Much like we all have an index.html file, we need to make a CSS file.</p>
+					</div>
+				</section>
+
+				<section class="small">
+					<h2>How to make a CSS file</h2>
+					<ol>
+						<li>Find the practice index.html file you made</li>
+						<li>In the "practice" folder, make a folder named "css"</li>
+						<li>Create a new file in that folder named styles.css. It's okay if it's empty.</li>
+					</ol>
+					<img src="images/4-lecture-css.png"/>
+					<div class="notes">
+						Next, let's tell the HTML where this file is.
+					</div>
+				</section>
+
+				<section data-markdown class="small">
+					<h2 class="special-smaller">Linking your HTML to the CSS</h2>
+					<pre><code contenteditable style="margin-top: 20px;">&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Consider the lobster&lt;/title&gt;
+
+		&lt;!-- Our new CSS link: --&gt;
+		&lt;link rel="stylesheet" href="css/styles.css"&gt;
+	&lt;/head&gt;
+
+   &lt;body&gt;
+    	&lt;h1&gt;Consider the lobster&lt;/h1&gt;
+    	&lt;p&gt;The point is that &lt;strong&gt;lobsters&lt;/strong&gt; are basically <br/>giant sea-insects.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;	
+					</code></pre>
+					<div class="notes">
+						<p>Under the title tag, we can put in a link tag. -- You'll notice the link tag doesn't have a closing tag. Tags like this are called "empty elements"; they will never contain anything, they only have attributes.</p>
+						<p>Looking at what it says: "rel" stands for relation, and "href" stands for hypertext reference (remember how HTML stands for Hyper Text Markup Language? Yeah, you'll never have to think about that fact again.) So this essentially says, the reference I'm about to give you is a stylesheet, and here it is, at css/styles.css.</p>
+						<p>Okay, let's look at some CSS.</p>
+					</div>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section data-markdown>
+					<h2>An example</h2>
+
+					<div style="float:left; width: 700px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+					<div style="clear:both;"></div>
+					<pre class="double-editor" style="width:680px;"><code style="width:660px;" contenteditable >&lt;html&gt;
+   &lt;head&gt;
+		&lt;title&gt;Consider the lobster&lt;/title&gt;
+		&lt;link rel="stylesheet" href="css/styles.css"&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+    	&lt;h1&gt;Consider the lobster&lt;/h1&gt;
+    	&lt;p&gt;The point is that &lt;strong&gt;lobsters&lt;/strong&gt;<br/> are basically giant sea-insects.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;	
+					</code></pre>
+					<pre class="double-editor" style="width:220px;"><code contenteditable>h1 {
+	color: red;
+}
+					</code></pre>
+					<div style="clear:both;"></div>
+					<div class="notes">
+						So what does this do? Can anyone guess?
+					</div>
+				</section>
+
+				<section>
+					<h3 class="al" style="margin-top:180px; color:red; text-shadow:none;">Consider the lobster</h3>
+				    <p class="al">The point is that <strong>lobsters</strong> are basically giant sea-insects.</p>
+				    <div class="notes">
+				    	Right, it changed the h1 tag to red. So let's look at that CSS rule up close.
+				    </div>
+				</section>
+
+				<section class="small">
+					<img src="images/css.png"/>
+					<div class="notes">
+						<p>This is called a CSS rule, and it has three parts:</p>
+						<ol>
+							<li>A <strong>selector</strong>, this is where you pick which tags to affect. Here, I've picked every h1. </li>
+							<li>A <strong>property</strong>, this is where you pick what aspect of the tag to change. I want to change its color.</li>
+							<li>And a <strong>value</strong>, which is what we set the property to. I picked red, 'cause you know, lobsters.</li>
+						</ol>
+						<br/><br/>
+						<p>So now you know what these mean, here's another way to think about it. And it's how I think about it when I'm coding.</p>
+					</div>
+				</section>
+
+				<section class="small">
+					<h2>While writing CSS, go through these steps</h2>
+					<ol>
+						<li><strong>What am I trying to do?</strong> <br/>I want my headline to be red</li>
+						<li><strong>What is the element called?</strong> <br/>Let's see, I'm using &lt;h1&gt;, it's what's in my HTML</li>
+						<li><strong>What's the property I need to use?</strong> <br/>Let's look up the CSS property for colors</li>
+						<li><strong>What's the value I want?</strong> <br/>Ha, red is just "red" (we can look this up too)</li>
+					</ol>
+					<div class="notes">
+						<p>But it doesn't have to stop with one property.</p>
+					</div>
+				</section>
+				
+				<section data-markdown class="small">
+					<pre><code contenteditable style="margin-top: 20px;">
+
+						h1 { 
+							color: red;
+							font-family: ‘Comic Sans MS’; 
+						} 
+
+					</code></pre>
+
+					<h3 class="al" style="margin-top:40px; color:red; text-shadow:none; font-family: 'Comic Sans MS';">Consider the lobster</h3>
+					<p class="al">The point is that <strong>lobsters</strong> are basically giant sea-insects.</p>
+
+					<div class="notes">
+						<p>So this says, all H1s should be the color red and use the font ‘Comic Sans MS’.</p>
+
+						<p>What if we want to change how the paragraphs look? We can add another rule. </p>
+					</div>
+				</section>
+
+				<section data-markdown class="small">
+					<pre><code contenteditable style="margin-top: 20px;">
+
+						h1 { 
+							color: red;
+							font-family: ‘Comic Sans MS’; 
+						} 
+
+						p {
+							font-size: 18px;
+						}
+
+
+					</code></pre>
+
+					<h3 class="al" style="margin-top:40px; color:red; text-shadow:none; font-family: 'Comic Sans MS';">Consider the lobster</h3>
+					<p class="al" style="font-size: 18px;">The point is that <strong>lobsters</strong> are basically giant sea-insects.</p>
+
+					<div class="notes">
+						<p>So you're starting to get the hang of reading CSS. Before we let you write your own, we wanted to show you one more thing.</p> 
+						<p>Colors. What if I don't want it to be generic red? How do I tell the Internet what color I want it to be? With numbers, or more specifically, hex codes.</p>
+					</div>
+				</section>
+
+				<section data-markdown class="small">
+					<pre><code contenteditable style="margin-top: 20px;">
+
+						h1 { 
+							color: #FF0000;
+						} 
+
+					</code></pre>
+
+					<img src="images/hex-codes.png"/>
+
+					<div class="notes">
+						<p>These aren't even all the options for red. But if you ever are stuck, there are great tools out there for picking colors, let's google it together.</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>With your mentors:</h2>
+					
+					<ol>
+						<li>Practice making a CSS file, linking it, and writing CSS, <a href="http://codewithmemiami.com/exercises.shtml#lesson-4">following the instructions on the exercise sheet</a>. Try out these properties:
+						<ul>
+							<li>color, font-family, font-size</li>
+							<li>Try looking up: font-weight, underline and italic</li>
+						</ul>
+
+						</li>
+						<li>Do exercise #4: <a href="http://codewithmemiami.com/exercises.shtml#exercise-4">Style the Onion article with CSS</a></li>
+					</ol>
+
+					<div class="notes">
+						<p>So that’s the gist of it. We’ll let your mentors help you get some CSS on your page, and they’ll show you some more properties. When you’re feeling comfortable with that, we have an exercise for you to style your HTML page in a certain way. </p>
+					</div>
+				</section>
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>

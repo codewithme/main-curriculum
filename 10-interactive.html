@@ -1,0 +1,421 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>How to make interactives</title>
+
+		<meta name="description" content="jQuery">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section class="small">
+					<h1 class="opening special-margin" style="margin-top: 100px;">How to make interactives</h1>
+					<div class="small-logo-container disappear">
+						<img src="images/basic-logo-tan-bg.png"/>
+						<div class="copyright">&copy; <span>2013</span></div>
+					</div>
+					<div class="notes">
+						<p>So, here it is at last: How to make your webpages interactive. How do I make an interactive story?</p>
+					</div>
+				</section>
+
+				<section>
+					<h2 id="so-what-is-javascript">Where we're going</h2>
+					<ul>
+						<li>Learn a few basic programming concepts ...</li>
+						<li>... so we can learn a few lines of code that form the building blocks of many interactives</li>
+					</ul>
+					<div class="notes">
+						<p>What we're headed to, by the end of the lesson, is learning how to write a few lines of code that you can reuse and adapt to do a huge range of interactions, from slideshows to timelapses to tabs to calculators to simple animation.</p>
+						<p>So keep that in mind. Three lines of code. It's going to be a bit of a walk, but we'll get there together.</p>
+					</div>
+				</section>
+
+
+				<section>
+
+					<h2 id="the-simplest-javascript">Under the hood</h2>
+
+						<a href="http://www.nytimes.com/interactive/2010/05/01/us/20100501-oil-spill-tracker.html">
+							<img src="images/gulf.png" />
+						</a>
+
+						<div class="notes">
+							<p>To start us off, I thought it'd be helpful to show you how an interactive works.</p> 
+							<p>It's the Times map of the oil spill of the Gulf. This was before I got there, but I think this is a great graphic: It's simple, tells a meaningful story, and is interactive in exactly the way you want for this.</p>	
+						</div>
+
+				</section>
+
+				<section>
+
+					<h2 id="functions-and-calls">What is an interactive?</h2>
+
+					<ul>
+						<li>When the user interacts with the page, the page does something, like show text or hide an image</li>
+					</ul>
+					
+					
+					
+
+					<div class="notes">
+						<ul>
+							<li>When I click on a "before" photo, the "after" photo appears</li>
+							<li>When I type in a tweet box, the number of remaining characters appears</li>
+						</ul>
+					</div>
+
+				</section>
+
+				<section>
+					<h2>Enter jQuery</h2>
+					<ul>
+						<li>It's a JavaScript file that makes coding easier</li>
+						<li>Use it on your page by "installing", or including, it.</li>
+					</ul>
+					<div class="notes">
+						You may feel like we're skipping something, but you don't need to know JavaScript before you learn jQuery.
+					</div>
+				</section>
+
+				<section>
+					<h2>How do we include jQuery?</h2>
+					<ol>
+						<li>Search for "jquery google"</li>
+						<li>Look for the snippet below, and copy it</li>
+						<li>Paste it into your head</li>
+						<li>Add "http:" before the "//" to finish linking it</li>
+					</ol>
+<p class="disappear">&nbsp;</p><pre class="disappear"><code contenteditable>&lt;html&gt;
+   &lt;head&gt;
+      &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;</p>
+					<div class="notes">
+						<p>Basically, you find the URL of a jQuery file, and tell your Web page to load it. Google is willing to pay the costs of sending this file to millions of people, and lets you use the file on their computers for free. </p>
+						<p>So: Google jQuery. Go to page. Copy the URL. </p>
+					</div>
+				</section>
+
+
+				<section>
+					<h2>Creating your JavaScript file</h2>
+					<ol>
+						<li>In your "js" folder, create a "script.js" file</li>
+						<li>In your "index.html", type in the code after jQuery</li>
+					</ol>
+<p class="disappear">&nbsp;</p><pre class="disappear"><code contenteditable>&lt;html&gt;
+   &lt;head&gt;
+      &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+      &lt;!-- Add this line next --&gt;
+      &lt;script src="js/script.js"&gt; &lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;</p>
+					<div class="notes">
+						<p>Basically, you find the URL of a jQuery file, and tell your Web page to load it. Google is willing to pay the costs of sending this file to millions of people, and lets you use the file on their computers for free. </p>
+						<p>So: Google jQuery. Go to page. Copy the URL. </p>
+					</div>
+				</section>
+
+				<section>
+					<h2>A basic jQuery call</h2>
+					<p style="color: #00B19D; font-size: 60px; margin-top: 50px; margin-bottom: 50px;">jQuery("img").fadeOut();</p>
+					<iframe src="jquery-simple.html" width=408 height=287 scrolling="no"></iframe>
+				</section>
+
+				<section>
+					<h2>Syntax of a call</h2>
+					<div style="position: relative; margin: 0 auto; width: 600px">
+						<div style="position: absolute;">
+							<img src="images/jquery-call-analysis.png">
+						</div>
+						<div class="fragment" style="position: absolute; background-color: #f3f1dc">
+							<img src="images/jquery-the-same-0.png">
+						</div>
+						<div class="fragment" style="position: absolute; background-color: #f3f1dc">
+							<img src="images/jquery-the-same.png">
+						</div>
+						<div class="fragment" style="position: absolute; background-color: #f3f1dc">
+							<img src="images/jquery-the-same-2.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Try it!</h2>
+					<ol>
+						<li>Go to codewithmemiami.com/jquery</li>
+						<li>Inspect the page, and click on Console</li>
+						<li>Type this command hit enter: <strong>jQuery("img").fadeOut();</strong></li>
+						<li>Then try this: <strong>jQuery("img").fadeIn();</strong></li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Let's do it live!</h2>
+					<p style="color: #999999; font-size: 60px; margin-top: 50px; margin-bottom: 50px;">jQuery("img").fadeOut();</p>
+					<p class="fragment" style="color: #00B19D; font-size: 60px; margin-top: 50px; margin-bottom: 50px;">sisi("door").open();</p>
+					<p class="fragment" style="color: #00B19D; font-size: 60px; margin-top: 50px; margin-bottom: 50px;">sisi("door").close();</p>
+				</section>
+
+				<section>
+					<h2>What about the timing?</h2>
+					<p style="color: #00B19D; font-size: 60px; margin-top: 50px; margin-bottom: 50px; text-align: left;">sisi(".main-door").open();</p>
+<div class="fragment" style="text-align: left; color: #00B19D; font-size: 60px; line-height: 1.3; ">sisi(".main-door").knock(function() {
+<br  style="display: block" />&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #999;">sisi(".main-door").open();</span>
+<br  style="display: block" />});</div>
+				</section>
+
+				<section>
+					<h2>Back to jQuery</h2>
+<div style="text-align: left; color: #00B19D; font-size: 60px; line-height: 1.3; ">sisi(".main-door").knock(function() {
+<br  style="display: block" />&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #00B19D;">sisi(".main-door").open();</span>
+<br  style="display: block" />});</div>
+
+<div class="fragment" style="text-align: left; color: #00B19D; font-size: 60px; line-height: 1.3; margin-top: 25px;">jQuery("p").click(function() {
+<br  style="display: block" />&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #00B19D;">jQuery("img").fadeOut();</span>
+<br  style="display: block" />});</div>
+				</section>
+
+				<section>
+					<h2>Walking through an example</h2>
+
+<div style="text-align: left;">index.html</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithmemiami.com/images/owl.gif&quot; /&gt;
+&lt;p&gt;Click to shoo away the owl! &lt;/p&gt;</code></pre>
+					<div style="text-align: left;">script.js</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">jQuery("p").click(function() {
+	jQuery("img").fadeOut();
+});</code></pre>
+					<iframe src="jquery-event.html" width=500 height=500 scrolling="no"></iframe>
+				</section>
+
+				<section>
+					<h2>When using jQuery, ask yourself:</h2>
+					<ul>
+						<li class="fragment">What part of the page is the user interacting with? </li>
+						<li class="fragment">What are they doing to it? </li> 
+						<li class="fragment">In response, what part of the page do you want to change?  </li>
+						<li class="fragment">How do you want to change it?  </li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>When using jQuery, ask yourself:</h2>
+					<ul>
+						<li>What part of the page is the user interacting with? <strong class="fragment">The paragraph.</strong></li>
+						<li class="fragment">What are they doing to it? <strong class="fragment">Clicking it.</strong></li> 
+						<li class="fragment">In response, what part of the page do you want to change? <strong class="fragment">The image.</strong> </li>
+						<li class="fragment">How do you want to change it?  <strong class="fragment">Fade it out.</strong> </li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Fill in the jQuery blanks</h2>
+					<ul class="smaller">
+						<li>When <strong>the paragraph</strong> is <strong>clicked</strong>,  the <strong>image</strong> will <strong>fade out</strong>.</li>
+					</ul>
+					<p style="clear; both"></p>
+					<p style="clear; both"></p>
+					<p style="clear; both"></p>
+					<div style="text-align: left;">index.html</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithmemiami.com/images/owl.gif&quot; /&gt;
+&lt;p&gt;Click to shoo away the owl! &lt;/p&gt;</code></pre>
+					<div style="text-align: left;">script.js</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">jQuery("______").______(function() {
+	jQuery("______").______();
+});</code></pre>
+
+</section>
+				
+				<section>
+					<h2>Fill in the jQuery blanks</h2>
+					<ul class="smaller">
+						<li>When <strong>the paragraph</strong> is <strong>clicked</strong>,  the <strong>image</strong> will <strong>fade out</strong>.</li>
+					</ul>
+					<p style="clear; both"></p>
+					<p style="clear; both"></p>
+					<p style="clear; both"></p>
+					<div style="text-align: left;">index.html</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithmemiami.com/images/owl.gif&quot; /&gt;
+&lt;p&gt;Click to shoo away the owl! &lt;/p&gt;</code></pre>
+					<div style="text-align: left;">script.js</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">jQuery("paragraph").is clicked(function() {
+	jQuery("img").will fade out();
+});</code></pre>
+
+</section>
+
+				<section>
+					<h2>In real jQuery</h2>
+					<ul class="smaller">
+						<li>When <strong>the paragraph</strong> is <strong>clicked</strong>,  the <strong>image</strong> will <strong>fade out</strong>.</li>
+					</ul>
+					<p style="clear; both"></p>
+					<div style="text-align: left;">index.html</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithmemiami.com/images/owl.gif&quot; /&gt;
+&lt;p&gt;Click to shoo away the owl! &lt;/p&gt;</code></pre>
+					<div style="text-align: left;">script.js</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">jQuery("p").click(function() {
+	jQuery("img").fadeOut();
+});</code></pre>
+</section>
+
+
+				<section>
+					<h2>Why computers are dumb</h2>
+					<div style="text-align: left;">index.html</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script src="script.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;img src=&quot;http://codewithme.com/images/owl.gif&quot; /&gt;
+   &lt;p&gt;Click to shoo away the owl!&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					<div style="text-align: left;">script.js</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">jQuery("p").click(function() {
+	jQuery("img").fadeOut();
+});</code></pre>
+
+</section>
+
+
+<section>
+					<h2>A robot goes across the street...</h2>
+</section>
+
+				<section>
+					<div style="text-align: left;">index.html</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">&lt;html&gt;
+ &lt;head&gt;
+   &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script src="script.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;img src=&quot;http://codewithme.com/images/owl.gif&quot; /&gt;
+   &lt;p&gt;Click to shoo away the owl!&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					<div style="text-align: left;">script.js</div>
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">jQuery(document).ready(function() {
+	jQuery("p").click(function() {
+		jQuery("img").fadeOut();
+	});
+});</code></pre>
+
+</section>
+						
+				<section>
+					<h2>With your mentor</h2>
+					<ul>
+						<li>Take a breath. You can do this!</li>
+						<li>Do exercise 10: Create a before and after graphic</li>
+					</ul>
+				</section>
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+			$(document).ready(function() {
+				
+				Reveal.addEventListener( 'customevent', function() {
+					$("#img-1").show();
+					$("#img-1").delay(1000).fadeOut(1000);
+				} );	
+				
+				$("#img-2").click(function() {
+					$("#img-2").fadeOut(1000);
+				})
+				
+				$("#img-2b").click(function() {
+					$("#img-2b").css({ marginRight: "500px" })
+				});
+				
+				$("#img-3").click(function() {
+					$("#img-3").animate({ marginRight: "500px" });;
+				})
+
+			});
+			
+		</script>
+
+	</body>
+</html>

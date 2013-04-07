@@ -1,0 +1,301 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>CSS box model</title>
+
+		<meta name="description" content="CSS Box Model">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 class="opening special-margin">The CSS box model</h1>
+					<div class="small-logo-container disappear">
+						<img src="images/basic-logo-tan-bg.png"/>
+						<div class="copyright">&copy; <span>2013</span></div>
+					</div>
+				</section>
+				
+				<section class="small">
+					<h2>The box model</h2>
+
+					<div class="box-model-container">
+
+						<p class="box-model">"Computers are good at following instructions, <br />but not at reading your mind." &mdash;Donald Knuth</p>
+
+					</div>
+
+					<div class="notes">
+						<p>
+							As you've begun to style CSS, you've probably wanted to do things like add borders, or spacing, or drop shadows, around your paragraphs and headlines. That's done through what's called the box model. 
+						</p>	
+						<p>
+							Why is it the "box" model? Because the structure of HTML elements is a box. If you inspect an element, it's always rectangular, and often wider than the text within it.
+						</p>
+				</section>
+
+				<section class="notes">
+					<h2>Margin, border, padding</h2>
+					
+					<div class="box-model-container">
+
+						<p class="box-model">"Computers are good at following instructions, <br />but not at reading your mind." &mdash;Donald Knuth</p>
+						<img src="images/box-model.png" />
+
+						<div class="notes">
+
+						</div>
+
+					</div>
+
+					<div class="notes">
+						<p>So what are the parts of the model? There's the margin, which is what's on the outside of the box. There's the border. There's the padding on the side. </p>
+						<p>If you need help remembering, just imagine a puffy dress -- the padding is the stuff on the inside of the dress, the border is the hemline, and the margin is the space between each person. The person, like the content, is the in the center.</p>
+						<p>There's also width, which can limit how wide your element is; and height, which gets weird, because text may get cut off.</p>
+					</div>
+
+				</section>
+
+				<section class="small">
+					<h2>Box model syntax</h2>
+					
+					<div class="disappear">
+						<div style="float:left; width: 520px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+						<div style="clear:both;"></div>
+						<pre class="double-editor" style="width:500px;"><code style="width:480px;">&lt;p class=&quot;box-model&quot;&gt;
+    &quot;Computers are good at following instructions, but not at reading your mind.&quot; &mdash;Donald Knuth
+&lt;/p&gt;
+</code></pre>
+						<pre class="double-editor" style="width:400px;"><code>.box-model {
+    margin: 20px;
+    border: 5px solid #D8D4AF;
+    padding: 20px;
+    width: 600px;
+    background-color:  #D8D4AF;
+}</code></pre>	
+					</div>
+
+					<div class="bottom plain clearfix disappear">
+						<p class="box-model">
+						    "Computers are good at following instructions, but not at reading your mind." —Donald Knuth
+						</p>
+
+					</div>
+
+					<div class="notes">
+						<p>Margin is specified in pixels. We'll show you more ways in a moment.</p>
+						<p>Border has three parts: One is the width; one is the pattern; one is the color. There are patterns like dashed or dotted.</p>
+						<p>Padding is specified like margin.</p>
+					</div>
+
+				</section>
+
+
+				<section class="small">
+					<h2>Syntax for margin, border, padding</h2>
+					<ul>
+						<li class="syntax">margin-top: 20px;</li>
+						<li class="syntax fragment">margin-right: 20px;</li>
+						<li class="syntax fragment">padding-right: 20px;</li>
+						<li class="syntax fragment">border-right: 1px dotted black;</li>
+						<li class="syntax fragment">margin: 20px 30px 40p 50px</li>
+						<li class="syntax fragment">margin: <em>top right bottom left (TRBL)</em></li>
+					</ul>
+					<div class="notes">
+						<p>(Walk through bullet points.)</p>
+						<p>Any questions on the box model?</p>
+						<p>So I want to cover one topic related to the box model.</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>The box model, while coding</h2>
+
+					<div style="position: relative">
+						<div style="position: absolute">
+							<img src="images/box-model-steps-1.png">
+						</div>
+						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
+							<img src="images/box-model-steps-2.png">
+						</div>
+						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
+							<img src="images/box-model-steps-3.png">
+						</div>
+						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
+							<img src="images/box-model-steps-4.png">
+						</div>
+						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
+							<img src="images/box-model-steps-5.png">
+						</div>
+					</div>
+
+				</section>
+
+				<section class="small">
+					<h2>Organizing your elements</h2>
+					<p>&nbsp;</p>
+					<div class="plain browser disappear">
+						<h3>As Not Seen on TV</h3>
+						<img src="http://graphics8.nytimes.com/images/2012/11/14/dining/14REST1_SPAN/14REST1_SPAN-articleLarge.jpg" alt="" width=300>
+						<p>By PETE WELLS</p>
+						<p>GUY FIERI, have you eaten at your new restaurant in Times Square? Have you pulled up one of the 500 seats at Guy’s American Kitchen & Bar and ordered a meal? Did you eat the food? Did it live up to your expectations?</p>
+					</div>
+
+					<div class="notes">
+						<p>On the web, we often have a collection of paragraphs or images that we want to bundle together. Like an article, or a headline and a photo. We often want one border to go around them, or to have some margin around an entire set of items -- we want them to feel connected and cohesive.</p>
+						<p>In terms of HTML, we need to put them into a single box. How do we do that? We can't use a paragraph -- they can't contain multiple paragraphs.</p>
+						<p>So we use what's called a div, or divider, like a bookshelf, to hold lots of little things in place.</p>
+					</div>
+
+				</section>
+
+
+				<section class="small">
+					<!-- <h2>We need a div!</h2> -->
+
+					<div class="disappear half first">
+						<pre><code>&lt;div&gt;
+   &lt;h3&gt;As Not Seen on TV&lt;/h3&gt;
+   &lt;img src=&quot;http://i.imgur.com/EOUpanD.jpg&quot;&gt;
+   &lt;p&gt;GUY FIERI, have you eaten at your new restaurant in Times Square? Have you pulled up one of the 500 seats at Guy’s American Kitchen &amp; Bar and ordered a meal? Did you eat the food? &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+					</div>
+
+					<div class="plain half browser">
+						<h3>As Not Seen on TV</h3>
+						<img src="http://graphics8.nytimes.com/images/2012/11/14/dining/14REST1_SPAN/14REST1_SPAN-articleLarge.jpg" alt="" width=350>
+						<p>GUY FIERI, have you eaten at your new restaurant in Times Square? Have you pulled up one of the 500 seats at Guy’s American Kitchen & Bar and ordered a meal? Did you eat the food? </p>
+					</div>
+
+					<div class="notes">
+						<p>So, we can put all of that content into a single div. Now we can style the div as one unit -- we can add a margin, border, padding, whatever. </p>
+						<p>It's like how by moving a bookshelf, we can move everything in it without dealing with each piece.</p>
+						<p>Note how we're writing the code too: everything in the div is indented, and the opening and closing div tags line up. Programmers keep their code structured because it helps them see the structure of the page -- you can imagine the boxes.</p>
+					</div>
+
+				</section>
+
+				<section class="small">
+					<!-- <h2>We need a div!</h2> -->
+
+					<div class="disappear half first">
+						<div class="stacked-editor">
+							<p>styles.css</p>
+							<pre ><code>.article { 
+   width: 400px; 
+   padding: 20px;
+   border: 3px solid #ccc;
+} </code></pre>	
+						</div>
+						<div class="stacked-editor">
+							<p>index.html</p>
+							<pre><code>&lt;div class="article"&gt;
+   &lt;h3&gt;As Not Seen on TV&lt;/h3&gt;
+   &lt;img src=&quot;http://i.imgur.com/EOUpanD.jpg&quot;&gt;
+   &lt;p&gt;GUY FIERI, have you eaten at your new restaurant in Times Square? ...  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+						</div>
+					</div>
+
+					<div class="plain half browser">
+						<div class="article">
+							<h3>As Not Seen on TV</h3>
+							<img src="http://graphics8.nytimes.com/images/2012/11/14/dining/14REST1_SPAN/14REST1_SPAN-articleLarge.jpg" alt="" width=350>
+							<p>GUY FIERI, have you eaten at your new restaurant in Times Square? Have you pulled up one of the 500 seats at Guy’s American Kitchen & Bar and ordered a meal? Did you eat the food? </p>
+						</div>
+					</div>
+
+					<div class="notes">
+						<p>So, we can put all of that content into a single div. Now we can style the div as one unit -- we can add a margin, border, padding, whatever. </p>
+						<p>It's like how by moving a bookshelf, we can move everything in it without dealing with each piece.</p>
+						<p>Note how we're writing the code too: everything in the div is indented, and the opening and closing div tags line up. Programmers keep their code structured because it helps them see the structure of the page -- you can imagine the boxes.</p>
+					</div>
+
+				</section>
+		
+				<section>
+					<h2>With your mentor</h2>
+					<ul class="presentation-7">
+						<li>Practice <a href="http://codewithmemiami.com/exercises.shtml#lesson-7">the box model</a> by trying out margin, padding, width, border and background-color in your practice file. </li>
+						<li><strong>Do exercise #7</strong>: <a href="http://codewithmemiami.com/exercises.shtml#exercise-7">Design it Twitter-style, part two</a>. </li> 
+						</li>
+						<li>Work on your project.</li>
+					</ul>	
+				</section>
+				
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>

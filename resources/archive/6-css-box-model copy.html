@@ -1,0 +1,128 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>CSS Box Model</title>
+
+		<meta name="description" content="CSS Box Model">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 class="opening special-margin">CSS box model</h1>
+					<img class="disappear copyright" style="margin-top:100px;" width="250" src="images/basic-logo-tan-bg.png"/>
+				</section>
+				
+				<section>
+					<h2>Most elements are boxes</h2>
+					
+
+				</section>
+
+				<section>
+					<h2>What is in a box?</h2>
+					<p><a href="http://fiddle.jshell.net/giratikanon/SjC8h/show/light/">JS Fiddle</a></p>
+					<p>Copy your CSS using inspector!</p>
+				</section>
+				
+				<section>
+					<h2>What is a float? </h2>
+					<p><a href="http://fiddle.jshell.net/giratikanon/SjC8h/show/light/">CSS-Tricks</a></p>
+				</section>
+	
+				
+				<section>
+					<h2>How to write floats</h2>
+					<ul>
+						<li class="fragment"><a href="file:///Volumes/Macintosh%20HD/Users/giratikanon/Dropbox/reveal.js/8a-floating-exercise.html" target="_blank">Floating an image within an article</a></li>
+						<li class="fragment"><a href="">Floating two columns side by side, and clearing the float</a></li>
+					</ul>	
+				</section>
+		
+				<section>
+					<h2>With your mentor</h2>
+					<ul class="presentation-7">
+						<li>Play with the box model: <a href="http://bit.ly/codedc4-box">bit.ly/codedc4-box</a> </li>
+						<li><strong>Do exercise #5</strong>: Take the HTML from <a href="http://bit.ly/codedc4-html">bit.ly/codedc4-html</a> and style it like this: <a href="http://bit.ly/codedc4-boxes">bit.ly/codedc4-boxes</a>.</li>
+						<li><strong>Do exercise #6</strong>. Make the image float to the left, using  HTML from <a href="http://bit.ly/codedc5-1">bit.ly/codedc5-1</a>. Then float  two columns  side-by-side, and add a border to the ".second-exercise" div, using HTML from <a href="http://bit.ly/codedc5-2">bit.ly/codedc5-2</a>. </li>
+						<li><strong>Work on your project</strong>.
+						</li>
+					</ul>	
+				</section>
+				
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>

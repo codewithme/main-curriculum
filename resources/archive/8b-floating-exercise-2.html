@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			body {
+				font-family: Georgia, serif;
+			}
+			
+			.example {
+				border: 1px solid black;
+			}
+			
+			.clearfix:after { 
+			   content: "."; 
+			   visibility: hidden; 
+			   display: block; 
+			   height: 0; 
+			   clear: both;
+			}
+			
+			.before {
+				float: left;
+				width: 300px;
+				margin: 0 20px 0 0;
+			}
+			
+			.after {
+				float: left;
+				width: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Strunk and White</h2>
+		<h3>13. Omit needless words</h3>
+		<div class="example clearfix">
+			<p class="before">
+	Macbeth was very ambitious. This led him to wish to become king of Scotland. The witches told him that this wish of his would come true. The king of Scotland at this time was Duncan. Encouraged by his wife, Macbeth murdered Duncan. He was thus enabled to succeed Duncan as king. (55 words.)
+			</p>
+			<p class="after">	Encouraged by his wife, Macbeth achieved his ambition and realized the prediction of the witches by murdering Duncan and becoming king of Scotland in his place. (26 words.)
+				
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,321 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>CSS layout</title>
+
+		<meta name="description" content="CSS Box Model">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="small">
+					<h1 class="opening special-margin">CSS layout</h1>
+					<div class="small-logo-container disappear">
+						<img src="images/basic-logo-tan-bg.png"/>
+						<div class="copyright">&copy; <span>2013</span></div>
+					</div>
+				</section>
+				
+				<section class="small">
+					<h2>What is a float?</h2>
+					<img src="images/magazine-floats.png">
+					<div class="credit">Adapted from CSS Tricks' "<a href="http://css-tricks.com/all-about-floats/">All About Floats</a>."</div>
+					<div class="notes">
+						<p>
+							To borrow a metaphor from the website CSS Tricks, a float is like a pull quote or photo in a magazine layout: An element that is pulled to the left or right and lets other content flow around it.
+						</p>
+						<p>
+							You've noticed until now that, every HTML paragraph, header, image is laid out consecutively, one on top of another. Floats let lay out content side by side.
+						</p>
+					</div>
+				</section>
+				
+				<section class="small">
+
+					<h2>A simple float</h2>
+
+
+<div class="disappear">
+						<div style="float:left; width: 640px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+						<div style="clear:both;"></div>
+						<pre class="double-editor wide" style="width:620px;"><code style="width:580px;">&lt;img src=&quot;http://i.imgur.com/i8U98Ln.jpg&quot;&gt;
+&lt;p&gt;
+Scientists have recently identified a shocking new truth: cats are far deadlier to wildlife than anyone realized.
+&lt;/p&gt;</code></pre>
+						<pre class="double-editor wide" style="width:220px;"><code>img {
+  float: left;
+}</code></pre>	
+					</div>
+
+<div class="bottom narrow plain clearfix">
+	<img style="float: left; margin: 0 20px 0 0" src="http://placekitten.com/200/200?image=3" width=150 />
+	<p>Scientists have recently identified a shocking new truth: cats are far deadlier to wildlife than anyone realized.</p>
+</div>
+
+					<div class="notes">
+						<p>That's all it takes. Not bad! You can also float: right.</p>
+					</div>
+				</section>
+
+				<section class="small">
+
+					<h2>A simple float right</h2>
+
+					<div class="disappear">
+						<div style="float:left; width: 640px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+						<div style="clear:both;"></div>
+						<pre class="double-editor wide" style="width:620px;"><code style="width:580px;">&lt;img src=&quot;http://i.imgur.com/i8U98Ln.jpg&quot;&gt;
+&lt;p&gt;
+Scientists have recently identified a shocking new truth: cats are far deadlier to wildlife than anyone realized.
+&lt;/p&gt;</code></pre>
+						<pre class="double-editor wide" style="width:220px;"><code>img {
+  float: right;
+}x</code></pre>	
+					</div>
+
+<div class="bottom narrow plain clearfix">
+	<img style="float: right; margin: 0 0 0 20px" src="http://placekitten.com/200/200?image=3" width=150 />
+	<p>Scientists have recently identified a shocking new truth: cats are far deadlier to wildlife than anyone realized.</p>
+</div>
+
+					<div class="notes">
+						<p>Like so.</p>
+					</div>
+
+				</section>
+
+				<section class="small">
+
+					<h2>Side-by-side floats</h2>
+					<div class="disappear">
+						<div style="float:left; width: 640px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+						<div style="clear:both;"></div>
+						<pre class="double-editor wide" style="width:620px;"><code style="width:580px;">&lt;div class=&quot;book-one&quot;&gt;
+	It is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife.
+&lt;/div&gt;
+&lt;div class=&quot;book-two&quot;&gt;
+	Happy families are all alike; every unhappy family is unhappy in its own way.
+&lt;/div&gt;</code></pre>
+						<pre class="double-editor wide" style="width:220px;"><code>.book-one { 
+   float: left;
+   width: 340px;
+}
+
+.book-two { 
+   float: left;
+   width: 340px;
+}</code></pre>	
+					</div>
+
+					<div class="bottom">
+						<p class="book-one">
+							It is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife.
+						</p>
+						<p class="book-two">
+							Happy families are all alike; every unhappy family is unhappy in its own way.
+						</p>
+					</div>
+
+
+					<div class="notes">
+						<p>To float two columns of text, or anything else, side by side, just add a float to each one, and be sure to add a width as well.</p>
+					</div>
+
+				</section class="small">
+
+				<section class="small">
+
+					<h2>Collapsed elements</h2>
+
+					<div class="disappear">
+						<div style="float:left; width: 540px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+						<div style="clear:both;"></div>
+					<pre class="double-editor wide" style="width:530px;"><code style="width:490px;">&lt;div class=&quot;container&quot;&gt;
+    &lt;p class=&quot;book-one&quot;&gt; 
+        It is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife.
+    &lt;/p&gt;
+&lt;/div&gt;<</code></pre>
+						<pre class="double-editor wide" style="width:320px;"><code>.book-one { 
+   float: left;
+   width: 340px;
+}
+
+.container {
+  border: 1px solid #ccc;
+  padding: 10px;
+}</code></pre>	
+					</div>
+
+<div class="bottom">
+	<div class="container">
+		<p class="book-one">
+			It is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife.
+		</p>
+	</div>
+</div>
+
+					<!-- <div class="disappear left-column">
+						<div class="stacked-editor">
+							<p>styles.css</p>
+							<pre ><code>.book-one { 
+	float: left;
+	width: 150px;
+}
+
+.book-two { 
+	float: left;
+	width: 150px;
+}</code></pre>	
+						</div>
+						<div class="stacked-editor">
+							<p>index.html</p>
+							<pre><code>&lt;div class=&quot;book-one&quot;&gt;Pride and Prejudice, By Jane Austen&lt;/div&gt;
+&lt;div class=&quot;book-two&quot;&gt;Pride and Prejudice and Zombies, By Seth Grahame-Smith&lt;/div&gt;</code></pre>
+						</div>
+					</div> 
+
+
+
+					<div class="disappear plain right-example">
+						<p class="title">browser</p>
+						<div class="right-exampler-inner">
+							<div class="book-one">Pride and Prejudice, By Jane Austen</div>
+							<div class="book-two">Pride and Prejudice and Zombies, By Seth Grahame-Smith</div>
+						</div>
+					</div> -->
+
+					<div class="notes">
+						We can see here that the parent of a float is behaving strangely -- the border should go all the way around the quote, but it's collapsed. But there is a fix.
+					</div>
+
+				</section>
+
+
+				<section class="small">
+
+					<h2>Fixing the collapse</h2>
+
+					<div class="disappear">
+						<div style="float:left; width: 540px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+						<div style="clear:both;"></div>
+					<pre class="double-editor wide" style="width:530px;"><code style="width:490px;">&lt;!-- Clearfix on parent --&gt;
+&lt;div class=&quot;container clearfix&quot;&gt;
+    &lt;p class=&quot;book-one&quot;&gt; &lt;!-- Float --&gt;
+        It is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife.
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="double-editor wide" style="width:320px;"><code>...
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}</code></pre>	
+					</div>
+
+					<div class="bottom">
+						<!-- Clearfix on parent -->
+						<div class="container clearfix">
+							<p class="book-one"> <!-- Float -->
+								It is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife.
+							</p>
+						</div>
+					</div>
+
+
+					<div class="notes">
+						<p>There's a technique called "clearfix" that solves this problem. It's something you can google -- say, "css tricks micro clearfix", and copy the code they provide.</p>
+
+						<p>You might say that it is a truth universally acknowledged, that a parent element in possession of a floated child must be in want of a clearfix.</p>
+					</div>
+
+				</section>
+
+		
+				<section class="small">
+					<h2>With your mentor:</h2>
+					<ul>
+						<li><strong>Do exercise #8</strong>: A parade of floats</li>
+						<!-- <li><strong>Do exercise #8b</strong>: Design it Twitter-style, part three</li> -->
+						<li>Work on your project.</li>
+					</ul>	
+				</section>
+				
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>

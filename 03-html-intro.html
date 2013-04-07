@@ -1,0 +1,238 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>How HTML works</title>
+
+		<meta name="description" content="Marking up content with HTML">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic,900' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="small">
+
+					<h1 class="opening special-margin">How HTML works</h1>
+					<div class="small-logo-container disappear">
+						<img src="images/basic-logo-tan-bg.png"/>
+						<div class="copyright">&copy; <span>2013</span></div>
+					</div>
+					<div class="notes">
+						<p>So hopefully that was fun. Let’s get down to the business of actually creating a page.</p>
+						<p>Because HTML is the skeleton, every Web page starts there. So let’s look at a very simple HTML page.</p>
+					</div>
+				</section>
+				
+				<section data-markdown class="small">
+					<h2>Check out these HTML tags</h2>
+					<pre class="disappear"><code contenteditable style="margin-top: 20px;">&lt;html&gt;
+   &lt;head&gt;
+    	&lt;title&gt;Consider the lobster&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+    	&lt;h1&gt;Consider the lobster&lt;/h1&gt;
+    	&lt;p&gt;The point is that &lt;strong&gt;lobsters&lt;/strong&gt; are basically <br/>giant sea-insects.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;	
+					</code></pre>	
+					<ul class="no-bullets disappear">
+						<li class="fragment show-html">&lt;html&gt;&lt;/html&gt;</li>
+						<li class="fragment show-html">&lt;head&gt;&lt;/head&gt;</li>
+						<li class="fragment show-html">&lt;title&gt;&lt;/title&gt;</li>
+						<li class="fragment show-html">&lt;body&gt;&lt;/body&gt;</li>
+						<li class="fragment show-html"><h1></h1></li>
+						<li class="fragment show-html"><p></p></li>
+					</ul>
+					<div class="notes small">
+						<p>So here you see a small chunk of HTML, that is being used to structure some text. The actual HTML are the words with brackets around them.</p>
+
+						<p>[ While pointing out HTML, BODY, H1 and P, make them show up below. ]</p>
+
+						<p>So you that around each of these words is those funny angled brackets, we’re sure you’ve seen them before -- they go on either side of the word like a little jacket or coat. Anything with these surrounding them, is called a tag, so this is an HTML tag, this is a BODY tag, this is an H1 tag and this is a P tag. </p>
+
+						<p>All right, but what is a *tag* really.  Let’s look at the first one more closely.</p>
+
+					</div>
+				</section>
+				
+				<section class="small">
+					<img src="images/tags.png"/>
+					<div class="notes">
+						<p>Does anyone know what the html tag means?</p>
+
+						<p>Great. The HTML tag indicates that we’re using HTML. So the words inside any tag defines its purpose. So in this case, the <html></html> tags are saying, anything in between us, will be HTML code.</p></div>
+				</section>
+
+				<section data-markdown class="small">
+					<!-- <h2>An example</h2> -->
+					<pre class="disappear"><code contenteditable style="margin-top: 20px;">&lt;html&gt;
+   &lt;head&gt;
+    	&lt;title&gt;Consider the lobster&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+    	&lt;h1&gt;Consider the lobster&lt;/h1&gt;
+    	&lt;p&gt;The point is that &lt;strong&gt;lobsters&lt;/strong&gt; are basically <br/>giant sea-insects.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>	
+					<ul class="no-bullets disappear">
+						<li class="show-html">&lt;html&gt;&lt;/html&gt;</li>
+						<li class="show-html">&lt;body&gt;&lt;/body&gt;</li>
+						<li class="show-html">&lt;head&gt;&lt;/head&gt;</li>
+						<li class="show-html">&lt;title&gt;&lt;/title&gt;</li>
+						<li class="show-html"><h1></h1></li>
+						<li class="show-html"><p></p></li>
+					</ul>
+					<div class="notes small">
+						<p>What about the other tags?</p> 
+<p>Anything between these two BODY tags appears in the browser window. This is the stuff you actually see on a page. So that’s why the h1 and the p tags are inside of the body.  Otherwise they wouldn’t show up!</p>
+<p>H1 means that it’s the main heading, like the headline of your story. The Ps are paragraphs. For example, the first P is your lede, the second P is your nut graf.</p>  
+<p>The strong tag makes some of your text stand out -- that usually makes the text bold. But you notice the second strong tag is different from the first one. It has a backslash before the word “strong”. That means we want the browser to *stop* making the text bold right here. Let's see that in action.</p> 
+
+					</div>
+				</section>
+
+				<section class="small">
+					<!-- <h2>An example</h2> -->
+					<pre><code contenteditable style="margin-top: 20px;">&lt;html&gt;
+   &lt;head&gt;
+    	&lt;title&gt;Consider the lobster&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+    	&lt;h1&gt;Consider the lobster&lt;/h1&gt;
+    	&lt;p&gt;The point is that &lt;strong&gt;lobsters&lt;/strong&gt; are basically <br/>giant sea-insects.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+					<h3 class="al" style="margin-top:40px;">Consider the lobster</h3>
+				    <p class="al">The point is that <strong>lobsters</strong> are basically giant sea-insects.</p>
+				    <div class="notes">
+				    	<p>Works perfectly! But what if we accidentally left it out?</p>
+				    </div>
+				</section>
+
+				<section class="small">
+					<!-- <h2>An example</h2> -->
+					<pre><code contenteditable style="margin-top: 20px; margin-bottom: 20px:">&lt;html&gt;
+   &lt;head&gt;
+    	&lt;title&gt;Consider the lobster&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+    	&lt;h1&gt;Consider the lobster&lt;/h1&gt;
+    	&lt;p&gt;The point is that &lt;strong&gt;lobsters are basically <br/>giant sea-insects.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>	
+
+					<h3 class="al" style="margin-top:40px;">Consider the lobster</h3>
+				    <p class="al">The point is that <strong>lobsters are basically giant sea-insects.</strong></p>
+				    <div class="notes">Okay. That was a lot of theory, and a lot to take in. But now let’s all try it out! </div>
+				</section>
+
+				<section class="small">
+					<h2>Commenting in HTML</h2>
+					<pre><code contenteditable style="margin-top: 20px; margin-bottom: 20px:">&lt;html&gt;
+   &lt;head&gt;
+    	&lt;!-- The head is for meta information about your page --&gt;
+    	&lt;title&gt;Consider the lobster&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+    	&lt;!-- The body is what will be displayed in your browser --&gt;
+    	&lt;h1&gt;Consider the lobster&lt;/h1&gt;
+    	&lt;p&gt;The point is that &lt;strong&gt;lobsters are basically <br/>giant sea-insects.&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					<div class="notes">
+						<p>Reasons to comment:</p>
+						<ul>
+							<li>Helping yourself remember things</li>
+							<li>Helping others read your code</li>
+							<li>Notes to yourself</li>
+							<li>Organize your code better</li>
+						</ul>
+					</div>
+
+				</section>
+
+				<section>
+					<h2>With your mentors:</h2>
+					<ul>
+						<li>In your practice file, <a href="http://www.codewithmemiami.com/exercises.shtml#practice-3">try making an HTML page</a> and writing HTML, such as: &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt; and comments.,
+						<li>Work with your mentors to learn the &lt;img&gt;, &lt;a&gt;, &lt;ul&gt;.</li>
+						<li>Do exercise #3: <a href="http://www.codewithmemiami.com/exercises.shtml#exercise-3">Format an article with HTML</></li>
+					</ul>
+				</section>
+
+       
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>

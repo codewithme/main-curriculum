@@ -1,0 +1,134 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Code with me</title>
+
+		<meta name="description" content="Code with me introduction">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1 style="margin-top:100px;"><img src="images/basic-logo-tan-bg.png"/></h1>
+					<h3>Coding for journalism</h3>
+					<div class="small-logo-container disappear standalone-copyright">
+						
+						<div class="copyright"> &copy; 2013 Code with me</div>
+					</div>
+					<div class="notes">
+						<p>Welcome! Thanks for spending the weekend learning something new. We're excited to work with you!</p>
+						<p>[ I'm Tom. I'm Sisi. ]</p>
+						<p>[ Thanks to our mentors. They've donated time. And are amazing. From all backgrounds. And thanks to our assistants. They're getting all the food! ]</p>
+					</div>
+				</section>
+
+				<section>
+					<!-- <h2>Thanks to our mentors</h2> -->
+					<img src="images/mentors.png" width=979 height=681 style="max-height: 681px; margin-top: -50px" />
+				</section>
+
+				<section>
+					<!-- <h2>Thanks to our mentors</h2> -->
+					<img src="images/assistants.png" style="margin-top: 100px"/>
+				</section>
+				
+				<section class="small">
+					<h2>Thanks to our sponsors</h2>
+					<table class="disappear">
+						<tr>
+							<td width=350 style="padding-right: 50px"><img src="images/KnightLab_Logo_codewithme.png"></td>
+							<td width=540 style="vertical-align: middle;"><img src="images/soclogo.jpg" width=""></td>
+						</tr>
+					</table>
+					<div class="notes">
+						<p>Thank you to Miranda Mulligan and Knight Lab for helping bring many of the mentors here, as well as paying for food. Without them, you wouldn't be here today. Miranda, do you want to talk a bit about what the Lab does?</p>
+						<p>Thank you for allowing us to use your classroom space for the workshop. And especially to Randy, who's been an incredible organizer behind the scenes.</p>
+					</div>
+				</section>
+				
+
+				<section class="small">
+					<h2>Three things we want you to do</h2>
+					<ol>
+						<li><strong>Work hard</strong>. <br /><span class="notes">Coding can be challenging, and a little frustrating. But the great thing about it is, when you run into a problem, there’s always a solution, if you push yourself to find it. When something doesn’t quite work or look the way you want, that’s okay -- you can figure it out and make it better. (PRESS ENTER)</span></li>
+						<li class="fragment"><strong>Ask questions</strong>. <br /><span class="notes">Our extremely generous and talented mentors have donated their Saturday and Sunday to help you. So if you’re stuck, ask them for help. That’s literally why they are here. I get stuck all the time, as do my colleagues -- and often just asking a question outloud helps me find the solution. So ask questions! (PRESS ENTER)</li>
+						<li  class="fragment"><strong>Have fun</strong>. <br/><span class="notes">Coding is awesome. It’s one of the most exciting ways in the world to tell your story, because, If you can imagine something, with code, you can build it. It doesn’t really take a lot of money, or special equipment, or insider access. It just takes your work. And that’s pretty awesome.</span></li>
+					</ol>
+				</section>
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,286 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>CSS</title>
+
+		<meta name="description" content="CSS Box Model">
+		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>jQuery</h1>
+				</section>
+				
+				<style>
+					.compact code {
+						font-size: 11px;
+						line-height: 11px;	
+					}
+					.js-code {
+						border: 1px solid #999;
+						text-align: center;
+						background-color: #eee;
+						height: 200px;
+						padding-top: 20px;
+					}
+					.jquery {
+						margin: 20px 200px;
+						padding: 20px;
+						text-align: center;
+						font-weight: bold;
+						border: 3px solid orange;
+						background-color: orange;
+					}
+				</style>
+				
+				<section>
+					<div class="js-code">
+						JavaScript
+					</div>
+				</section>
+				
+				<section>
+					<div class="js-code">
+						JavaScript
+						<div class="jquery">
+							jQuery
+						</div>
+					</div>
+				</section>
+				
+				<section class="compact">
+					<h2>jQuery vs. pure JavaScript</h2>
+
+
+<h4>jQuery</h4>
+<pre><code contenteditable>$("#race-car").fadeOut();</code></pre>
+								
+
+<h4>Pure JavaScript</h4>
+<pre><code contenteditable>var TimeToFade = 1000.0;
+								
+function fade(eid)
+{
+  var element = document.getElementById(eid);
+  if(element == null)
+    return;
+   
+  if(element.FadeState == null)
+  {
+    if(element.style.opacity == null 
+        || element.style.opacity == '' 
+        || element.style.opacity == '1')
+    {
+      element.FadeState = 2;
+    }
+    else
+    {
+      element.FadeState = -2;
+    }
+  }
+    
+  if(element.FadeState == 1 || element.FadeState == -1)
+  {
+    element.FadeState = element.FadeState == 1 ? -1 : 1;
+    element.FadeTimeLeft = TimeToFade - element.FadeTimeLeft;
+  }
+  else
+  {
+    element.FadeState = element.FadeState == 2 ? -1 : 1;
+    element.FadeTimeLeft = TimeToFade;
+    setTimeout("animateFade(" + new Date().getTime() + ",'" + eid + "')", 33);
+  }  
+}</code></pre>
+
+								
+								
+				</section>
+				
+				
+				
+				
+				<section>
+					<h2>Fading out</h2>
+<p>&nbsp;</p><pre><code contenteditable>$("img").fadeOut();</code></pre><p>&nbsp;</p>
+					<img id="img-0" src="https://encrypted-tbn2.google.com/images?q=tbn:ANd9GcQrLw43KilVhyeQhacLl6ttNVTQMuvgB9hgXUJsyOPa8p9TKFlWW4wWB8V8cg" />
+					<script>
+						
+					</script>
+				</section>
+				
+				<section data-state="customevent">
+					<h2>Fading out</h2>
+<p>&nbsp;</p><pre><code contenteditable>$("img").fadeOut();</code></pre><p>&nbsp;</p>
+					<img id="img-1" src="https://encrypted-tbn2.google.com/images?q=tbn:ANd9GcQrLw43KilVhyeQhacLl6ttNVTQMuvgB9hgXUJsyOPa8p9TKFlWW4wWB8V8cg" />
+					<script>
+						
+					</script>
+				</section>
+				
+				<section data-state="customevent-2">
+					<h2>Fading out on a click</h2>
+<p>&nbsp;</p><pre><code contenteditable>$("img").click(function() {
+	$("img").fadeOut();
+});</code></pre><p>&nbsp;</p>
+					<img id="img-2" src="https://encrypted-tbn2.google.com/images?q=tbn:ANd9GcQrLw43KilVhyeQhacLl6ttNVTQMuvgB9hgXUJsyOPa8p9TKFlWW4wWB8V8cg" />
+				</section>
+				
+				<section>
+					<h2>A real-world example</h2>
+<p>&nbsp;</p><pre><code contenteditable>$("#jeremy-bowers").highfive();</code></pre><p>&nbsp;</p>
+					<script>
+						
+					</script>
+				</section>
+				
+				<section>
+					<h2>A real-world example</h2>
+<p>&nbsp;</p><pre><code contenteditable>$("#jeremy").highfive(function() {
+	$("#jeremy-bowers").sayAwwYisss();
+});</code></pre><p>&nbsp;</p>
+<img src="http://i1147.photobucket.com/albums/o544/TJEvangeline/owl_awyiss.gif" />
+					<script>
+						
+					</script>
+				</section>
+
+				<section>
+					<h2>So how do I get jQuery on my page?</h2>
+					<p>It's like a program, we need to install it.</p>
+					<p style="margin-top:40px;">Within your &lt;head&gt;&lt;/head&gt; tags, add the following code:</p>
+
+					<pre><code contenteditable>&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+					<p style="margin-top:40px;">Then here's how you write jQuery on your page:</p>
+
+					<pre><code contenteditable>&lt;body&gt;
+	&lt;script type=&quot;text/javascript&quot;&gt;
+		$(document).ready(function(){
+			// Your jQuery here
+		});
+	&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+				</section>
+				
+		
+				<section>
+					<h2>With your mentor</h2>
+					<ul class="presentation-7">
+						<li>
+							<strong>Do exercise #6</strong>: 
+							<ul>
+								<li>Add this image or another image to your page: http://bit.ly/race-car.</li>
+								<li>Add a button to your page.</li>
+								<li>Make it so when you click on the button, the image fades out. </li>
+							</ul>
+						 </li>
+					</ul>	
+					<img src="http://i1147.photobucket.com/albums/o544/TJEvangeline/owl_awyiss.gif" />
+
+				</section>
+				
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+			$(document).ready(function() {
+				
+				Reveal.addEventListener( 'customevent', function() {
+					$("#img-1").show();
+					$("#img-1").delay(1000).fadeOut(1000);
+				} );	
+				
+				
+
+				$("#img-2").click(function() {
+					$("#img-2").fadeOut(1000);
+				})
+				
+				$("#img-2b").click(function() {
+					$("#img-2b").css({ marginRight: "500px" })
+				});
+				
+				$("#img-3").click(function() {
+					$("#img-3").animate({ marginRight: "500px" });;
+				})
+
+
+			});
+			
+			
+			
+		</script>
+
+	</body>
+</html>
