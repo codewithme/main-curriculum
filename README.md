@@ -6,6 +6,7 @@ We offer our teaching material under a [Creative Commons license](http://creativ
 
 ## Want to see our past curriculums?
 We strive to improve the curriculum after (and yes, also during) each of our workshops. So as lessons change, we'd like to keep an archive of them here, in the branches.
-* [Washington, D.C.](https://github.com/codewithme/main-curriculum/tree/dc)
-* [Miami](https://github.com/codewithme/main-curriculum/tree/miami)
+* [Miami](https://github.com/codewithme/main-curriculum/tree/miami), Feb. 2-3, 2013
+* [Washington, D.C.](https://github.com/codewithme/main-curriculum/tree/dc), August 17-18, 2012
+
 
