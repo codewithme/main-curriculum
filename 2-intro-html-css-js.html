@@ -1,0 +1,180 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>HTML, CSS, and JavaScript</title>
+
+		<meta name="description" content="HTML, CSS, and JavaScript">
+		<meta name="author" content="Code with me">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>HTML, CSS and JS</h1>
+					<h3>Um, what are they?</h3>
+				</section>
+	
+
+				<section>
+					<h2>The three languages</h2>
+					<ol>
+						<li class="">HTML</li>
+					</ol>
+				</section>
+				
+				<section>
+					<h2>Without HTML</h2>
+					<p>&nbsp;</p><pre><code contenteditable>The last man in the world was alone in a room. 
+					
+Then he heard a knock in the door.</code></pre><p>&nbsp;</p>
+					The last man in the world was alone in a room.
+					Then he heard a knock on the door.
+				</section>
+				
+				<section>
+					<h2>What HTML looks like</h2>
+					<p>&nbsp;</p><pre><code contenteditable>&lt;p&gt;The last man in the world was alone in a room.&lt;/p&gt;
+&lt;p&gt;Then he heard a knock in the door.&lt;/p&gt;</code></pre><p>&nbsp;</p>
+					<p>The last man in the world was alone in a room.</p>
+					<p>Then he heard a knock on the door.</p>
+				</section>
+				
+				<section>
+					<h2>What HTML does on a page</h2>
+					<p>Let's look at <a href="http://www.codewithmedc.com" target="_blank">Code with me</a>.</p>
+				</section>
+				
+				<section>
+					<h2>The three languages</h2>
+					<ol>
+						<li class="">HTML</li>
+						<li class="fragment">CSS</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>What CSS looks like</h2>
+					<p>&nbsp;</p><pre><code contenteditable>p {
+	color: blue;
+}</code></pre><p>&nbsp;</p>
+				
+					<p style="color: blue">The last man in the world was alone in a room.</p>
+					<p style="color: blue">Then he heard a knock in the door.</p>
+				</section>
+				
+				<section>
+					<h2>What CSS do on a page? </h2>
+					<p>Let's look at <a href="http://www.codewithmedc.com" target="_blank">Code with me</a> without CSS.</p>
+				</section>
+				
+				<section>
+					<h2>The three languages</h2>
+					<ol>
+						<li class="">HTML</li>
+						<li class="">CSS</li>
+						<li class="fragment">JavaScript</li>
+					</ol>
+				</section>
+				
+				<section>
+					<h2>What JavaScript looks like</h2>
+<p>&nbsp;</p><pre><code contenteditable>$("p").click(function() { 
+	$("p").fadeOut();
+});</code></pre><p>&nbsp;</p>
+					<p class="target">The last man in the world was alone in a room.</p>
+					<p class="target">Then he heard a knock in the door.</p>
+					<script>
+						$("p.target").click(function() {
+							$("p.target").fadeOut();
+						});
+					</script>
+				</section>
+				
+				<section>
+					<h2>What does JavaScript do on a page?</h2>
+					<p>Let's look at <a href="http://www.npr.org/">NPR.org</a> without JavaScript.</p>
+				</section>
+				
+				<section>
+					<h2>With your mentors</h2>
+					<p>Go to a news site, inspect the HTML, disable the CSS and JS, and get a feel for what the three languages.</p>
+				</section>
+				
+				
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+		</script>
+
+	</body>
+</html>

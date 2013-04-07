@@ -1,0 +1,170 @@
+9am: Breakfast 
+9:20am: jQuery, step by step review
+10:30 a.m.: Project time or optional review exercise
+12 p.m.: Lunch (pizza)
+1 p.m. Putting it all together
+2 p.m.: Project time 
+4:30 p.m.: Group presentations 
+
+
+
+* Syntax
+* Where everything goes on the page 
+* Real-life example
+
+* Let's really unpack this.
+
+* What's jQuery? 
+
+SLIDE
+*It's a JavaScript file that you can include on your Web page that makes coding easier. *
+
+Using jQuery is like installing a program on your computer or an app on your phone. So instead of instead doing all this math by hand, you download a program like Excel to help do it for you. Instead of manually changing each pixel on an image, you use Photoshop or iPhoto to help you edit pictures. 
+
+SLIDE
+Title: How do we include jQuery?
+
+Content: You find a copy of the jQuery file, and include it on your Web page like this: 
+
+Basically, you find the jQuery file, and tell your Web page to load it. You can either download it, like an image. Or you can find a copy on a server, and link to it. 
+
+It's much easier to use Google, because they basically are willing to pay all the costs of sending this file to billions of people around the world. 
+
+Google jQuery. Go to page. Copy the URL. Show what happens when you go to the link directly. 
+
+<script src="___" ></script>
+
+Generally put this in your <head></head>.
+
+Show what's happening in timeline. What's happening is that every time you load the page, it's download jQuery, loading it, and understanding it. 
+
+SLIDE
+Title: Breaking down a jQuery call 
+
+* What's happening in a jQuery call? jQuery is literally looking through your document for what you want. Just like CSS, this part is called a selector. If you write, "p", it's going to look for all the <p> tags. 
+* So what if we put the jQuery call right here? Well, it can't find the paragraphs, because the browser hasn't created them yet. 
+
+It's like if you called someone up and asked what the final score of the Nationals - Yankees game is, but it hadn't started yet. 
+
+A computer is very literal. It does exactly what you tell it to do, when you want. 
+
+So if you tell your roommate, let's go to the store, your roommate would immediately leave and go to the store. And stay there. And never come back.
+
+If you told a friend to walk with you to Chipotle and get dinner, your friend would do that, get dinner, and never eat it. (Your friend would also not say anything the whole time.)
+
+Many, if not most, problems you run into with programming are that you are not being as literal as the computer is. 
+
+Anyway, we only want jQuery to operate when the whole page, the whole document, is ready. We want to know the final score of a baseball game when it's over, we want to go to the store when everyone's ready. 
+
+So, jQuery has a convenient way to do this. We can tell it, quite literally, to only do things when the document is ready. 
+
+(function($) {  
+
+})(jQuery);
+
+	$(document).ready(function() { 
+	
+		
+
+	});
+
+When the $(_____) is _____.
+
+When the $(document) is ready.
+
+When the $(document).ready;
+
+
+The other part that may have tripped you up is what's going on with those braces. Basically, JavaScript will only do things between the braces when you want them to. 
+
+[ Use Timeline to show what's happening on a page. ]
+
+So let's walk through the call we looked at yesterday: When we click a button, we want to hide something. 
+
+A lot of the time with jQuery, you can think of it as mad libs, where you're trying to fill in four blanks.
+
+* What part of the page is the user interacting with? 
+* What are they doing to you? 
+* What part of the page do you want to change?
+* How do you want to change it?
+
+When the user clicks the button,
+then the image will fade out.
+
+OR 
+
+When the button is clicked, 
+then the image will fade out. 
+
+When this part of the page, the ____, is _____ by the user,
+then the _____ will ____.
+
+Obviously, this is more helpful with examples. 
+
+When the ____ is ____.
+	    button is clicked.
+         link is moused over.
+		paragraph is hovered over.
+         the page is scrolled.
+
+then, we want the following to happen
+			the _____   will ____.
+              the image    will fade out.
+              the tooltip  will appear.
+              the headline will slide down. 
+              the line will get bigger.
+
+So for almost every jQuery call, you need those four pieces. You can even use that as a template if you like, and fill it in. 
+
+
+When the button is clicked,
+	the image will fade out.
+
+$("button").clicked(function() {
+	
+	$("image").will fade out();
+
+});
+
+So, the computer doesn't understand it quite like that. We can't just, Computer, PLEASE make this button fade out! But it's pretty close, and we basically just have to do the syntax.
+
+---
+
+<input class="special-button" />
+
+
+$(".special-button").click(function() {
+	$("img").fadeOut();
+});
+
+= 
+
+When the input is clicked 
+
+	the image will fadeOut
+
+
+
+(Fill in one step at a time.)
+
+
+
+We know we want to wait until the document ready. That's basically a template we want every time we use jQuery. 
+
+So what's that mean for our call? It means we want to hide 
+
+.click()
+
+What are they clicking on? 
+
+
+
+[ syntax of a call ]
+
+
+
+
+
+
+
+Putting it all together

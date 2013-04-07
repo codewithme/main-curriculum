@@ -1,0 +1,284 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>jQuery</title>
+
+		<meta name="description" content="jQuery">
+		<meta name="author" content="Code with me">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css">
+		<link rel="stylesheet" href="css/codewithme.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Welcome to Day 2!</h1>
+					<p>Coffee, juice and breakfast are on their way.</p>
+					<h2 style="margin-top:100px;">We'll start a more in-depth review of jQuery at 9:20 a.m.</h2>
+				</section>
+
+				<section>
+					<h1>jQuery, step by step</h1>
+				</section>
+
+				<section>
+					<h2>What is jQuery, actually?</h2>
+					<ul>
+						<li>It's a JavaScript file that you can include on your Web page that makes coding easier.</li>
+						<li class="fragment">You use it on a Web page by "installing" it, or including it. (Why do we need to do this?)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>How do we include jQuery?</h2>
+					<p>You find a copy of the jQuery file, and include it on your Web page like this: </p>
+<p>&nbsp;</p><pre><code contenteditable>&lt;html&gt;
+	&lt;head&gt;
+		&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;</p>
+				</section>
+
+				<section>
+					<h2>Anatomy of a jQuery call</h2>
+					<img src="images/jQuery.png" />
+				</section>
+				
+				<section>
+					<h2>Anatomy of a jQuery call</h2>
+					<img src="images/jQuery2.png" />
+				</section>
+				
+				<section>
+					<h2>How to write a call</h2>
+<p>&nbsp;</p><pre><code contenteditable>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+      $(&quot;p&quot;).fadeOut();
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;</p>
+				</section>
+				
+				<section>
+					<h2>How to write a good call</h2>
+<p>&nbsp;</p><pre><code contenteditable>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+      $(document).ready(function() {
+        $(&quot;p&quot;).fadeOut();
+      });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;</p>
+				</section>
+
+
+				<section>
+					<h2>Document ready</h2>
+					<ul>
+						<li class="">When the document is ready.</li>
+						<li class="fragment">When the $(document) is ready.</li>
+						<li class="fragment">When the $(document).ready;</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Document ready</h2>
+					<img src="images/document-ready.png" />
+				</section>
+
+				<section>
+					<h2>When using jQuery, ask yourself:</h2>
+					<ul>
+						<li class="fragment">What part of the page is the user interacting with? </li>
+						<li class="fragment">What are they doing to it? </li> 
+						<li class="fragment">In response, what part of the page do you want to change?  </li>
+						<li class="fragment">How do you want to change it?  </li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>When using jQuery, ask yourself:</h2>
+					<ul>
+						<li class="fragment">What part of the page is the user interacting with? <strong>The button.</strong></li>
+						<li class="fragment">What are they doing to it? <strong>Clicking it.</strong></li> 
+						<li class="fragment">In response, what part of the page do you want to change in? <strong>The image.</strong> </li>
+						<li class="fragment">How do you want to change it?  <strong>Fade it out.</strong> </li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Fill in the jQuery blanks</h2>
+					<ul>
+						<li>When <strong>the button</strong> is <strong>clicked</strong>, then the <strong>image</strong> will <strong>fade out</strong>.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Fill in the jQuery blanks</h2>
+					<ul class="smaller">
+						<li>When <strong>the button</strong> is <strong>clicked</strong>,  the <strong>image</strong> will <strong>fade out</strong>.</li>
+					</ul>
+<pre><code contenteditable>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+      $("______").______(function() {
+        $("______").______();
+      });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;img class=&quot;secret-image&quot; src=&quot;http://placekitten.com/139/96&quot; /&gt;
+    &lt;input class="tricky-button" type=&quot;button&quot; value=&quot;Hide image!&quot;/&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;</p>					
+				</section>
+
+				<section>
+					<h2>Fill in the jQuery blanks</h2>
+<p>&nbsp;</p><pre><code contenteditable>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+      $("button").is clicked(function() {
+        $("image").will fade out();
+      });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;img class=&quot;secret-image&quot; src=&quot;http://placekitten.com/139/96&quot; /&gt;
+    &lt;input class="tricky-button" type=&quot;button&quot; value=&quot;Hide image!&quot;/&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;</p>					
+				</section>
+				
+						
+				<section>
+					<h2>With your mentor</h2>
+							<ul>
+								<li>Find Google's copy of jQuery, and include it</li>
+								<li>Add jQuery code so that when you click on a button, an image toggles between fading in and fading out. Use a starter file if you want: <a href="http://bit.ly/jquery-file">bit.ly/jquery-file</a>. Lecture code: <a href="http://bit.ly/working-jquery">bit.ly/working-jquery</a></li>
+								<li>Fill in the blank of the jQuery call:
+<pre><code contenteditable>$("______").______(function() {
+  $("______").______();
+});</code></pre>									
+									
+								</li>
+							</ul>
+<!-- 					<img src="http://i1147.photobucket.com/albums/o544/TJEvangeline/owl_awyiss.gif" />
+ -->
+				</section>
+
+				<section>
+					<h1>Lunch is served!</h1>
+					<marquee style="font-size: 50;">Food! Food! Food! Food! Food! Food! Food! Food!</marquee>
+					<h2 style="margin-top: 100px; line-height: 1.15;">Our next (and last) all-group instructional session is at 12:45 p.m.</h2>
+				</section>
+				
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		
+		<script>
+			
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+				]
+			});
+			
+			$(document).ready(function() {
+				
+				Reveal.addEventListener( 'customevent', function() {
+					$("#img-1").show();
+					$("#img-1").delay(1000).fadeOut(1000);
+				} );	
+				
+				$("#img-2").click(function() {
+					$("#img-2").fadeOut(1000);
+				})
+				
+				$("#img-2b").click(function() {
+					$("#img-2b").css({ marginRight: "500px" })
+				});
+				
+				$("#img-3").click(function() {
+					$("#img-3").animate({ marginRight: "500px" });;
+				})
+
+			});
+			
+		</script>
+
+	</body>
+</html>
