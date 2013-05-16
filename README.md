@@ -1,5 +1,5 @@
 # <em>Code with me</em> Portland curriculum
-The main curriculum taught during the <em>Code with me</em> Portland workshop on May 4-5, 2012. Our presentations are built using [reveal.js](http://lab.hakim.se/reveal-js/). You can see them live at [http://codewithme.us/portland/exercises.shtml](http://codewithme.us/portland/exercises.shtml).
+The main curriculum taught during the <em>Code with me</em> Portland workshop on May 4-5, 2012. Our presentations are built using [reveal.js](http://lab.hakim.se/reveal-js/). You can see them live at [http://codewithme.us/portland/exercises.html](http://codewithme.us/portland/exercises.html).
 
 ## Updates
 While a variety of our presentations were all updated slightly, the Portland curriculum has almost completely new presentations on:
