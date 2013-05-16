@@ -73,7 +73,7 @@ body { color: black;}
 }
 
 .reveal pre {
-    font-size: 0.65em;
+    font-size: 0.95em;
 }
 
 pre code {
@@ -103,7 +103,78 @@ pre code {
         margin: 50px 0 0 0;
     }
 
+.reveal h1.vertical-center {
+    margin-top: 20%;
+}
+
+.reveal h2.vertical-center {
+    margin-top: 25%;
+}
+
+.reveal p.vertical-center {
+    margin-top: 23%;
+}
+
+.reveal section .clear {
+    clear:both;
+}
+
 /* @end */
+
+/*********************************************
+ * STACKS
+ *********************************************/
+
+
+
+.stack {
+    position: relative;
+    margin: 0 auto;
+}
+
+    .single .layer {
+        background-color: #f1efda;
+    }
+
+    .layer {
+        position: absolute;
+    }
+
+    .layer:nth-child(1) {
+        z-index: 10;
+    }
+
+    .layer:nth-child(2) {
+        z-index: 20;
+    }
+
+    .layer:nth-child(3) {
+        z-index: 30;
+    }
+
+    .layer:nth-child(4) {
+        z-index: 40;
+    }
+
+    .layer:nth-child(5) {
+        z-index: 50;
+    }
+
+    .layer:nth-child(6) {
+        z-index: 60;
+    }
+
+    .layer:nth-child(7) {
+        z-index: 70;
+    }
+
+    .layer:nth-child(8) {
+        z-index: 80;
+    }
+
+    .layer:nth-child(9) {
+        z-index: 90;
+    }
 
 /*********************************************
  * DOUBLE EDITOR
@@ -269,7 +340,7 @@ pre code {
 }
 
 .container {
-    border: 1px solid #ccc;
+    border: 2px solid #000;
     padding: 10px;
 }
 
@@ -312,6 +383,41 @@ pre code {
     margin: 80px 0 40px 50px;
 }
 
+.reveal section input {
+    opacity: 0;
+    width: 0;
+}
+
+.reveal section span.number-highlight {
+    padding: 5px 10px;
+    background-color: rgb(38, 202, 52);
+    border-radius: 10px;
+}
+
+.reveal section .width {
+}
+
+    .reveal section .width hr {
+        float:left;
+    }
+
+    .reveal section .width .border {
+        display: block;
+        height: 20px;
+        position: relative;
+        top: 10px;
+        float:left;
+    }
+
+        .border.left {
+            border-right: 1px solid gray;    
+        }
+
+        .border.right {
+            border-left: 1px solid gray;
+        }
+
+.reveal section.border-options p { margin-bottom: 30px; }
 
 /*********************************************
  * SPEAKER NOTES
@@ -417,3 +523,4 @@ pre code {
 .reveal section .standalone-copyright img {
     width: 100px;
 }
+

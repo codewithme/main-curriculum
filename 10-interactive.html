@@ -6,7 +6,7 @@
 		
 		<title>How to make interactives</title>
 
-		<meta name="description" content="jQuery">
+		<meta name="description" content="How to make interactives, How jQuery Works">
 		<meta name="author" content="Code with me, Tom Giratikanon, Sisi Wei">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,10 +55,11 @@
 
 				<section>
 					<h2 id="so-what-is-javascript">Where we're going</h2>
-					<ul>
+					<ol>
 						<li>Learn a few basic programming concepts ...</li>
-						<li>... so we can learn a few lines of code that form the building blocks of many interactives</li>
-					</ul>
+						<li class="fragment">... so we can learn three lines of code ...</li>
+						<li  class="fragment">... that are the foundation of many interactives</li>
+					</ol>
 					<div class="notes">
 						<p>What we're headed to, by the end of the lesson, is learning how to write a few lines of code that you can reuse and adapt to do a huge range of interactions, from slideshows to timelapses to tabs to calculators to simple animation.</p>
 						<p>So keep that in mind. Three lines of code. It's going to be a bit of a walk, but we'll get there together.</p>
@@ -67,38 +68,36 @@
 
 
 				<section>
-
 					<h2 id="the-simplest-javascript">Under the hood</h2>
-
 						<a href="http://www.nytimes.com/interactive/2010/05/01/us/20100501-oil-spill-tracker.html">
 							<img src="images/gulf.png" />
 						</a>
-
 						<div class="notes">
 							<p>To start us off, I thought it'd be helpful to show you how an interactive works.</p> 
 							<p>It's the Times map of the oil spill of the Gulf. This was before I got there, but I think this is a great graphic: It's simple, tells a meaningful story, and is interactive in exactly the way you want for this.</p>	
 						</div>
-
 				</section>
 
 				<section>
+						<video src="images/presentations/interactive/earthhour2.mov" controls width=700></video>
+						<div class="notes">
+							<p>Showing example form a smaller newsroom. If you have two photos, and some knowledge, you can do this. And it's powerful.</p>	
+						</div>
+				</section>
 
+				<section>
 					<h2 id="functions-and-calls">What is an interactive?</h2>
-
 					<ul>
-						<li>When the user interacts with the page, the page does something, like show text or hide an image</li>
+						<li class="fragment">When the user interacts with the page, the page does something, like show text or hide an image</li>
 					</ul>
-					
-					
-					
-
+					<video class="fragment" src="images/presentations/interactive/twitter.mov" controls style="margin: 0 auto; margin-top: 30px"></video>
 					<div class="notes">
 						<ul>
 							<li>When I click on a "before" photo, the "after" photo appears</li>
 							<li>When I type in a tweet box, the number of remaining characters appears</li>
 						</ul>
+						<p>This is what Andrew was talking about, interaction.</p>
 					</div>
-
 				</section>
 
 				<section>
@@ -115,17 +114,14 @@
 				<section>
 					<h2>How do we include jQuery?</h2>
 					<ol>
-						<li>Search for "jquery google"</li>
-						<li>Look for the snippet below, and copy it</li>
-						<li>Paste it into your head</li>
+						<li>Google "jquery google"</li>
+						<li>Paste the snippet below into your head</li>
 						<li>Add "http:" before the "//" to finish linking it</li>
 					</ol>
 <p class="disappear">&nbsp;</p><pre class="disappear"><code contenteditable>&lt;html&gt;
    &lt;head&gt;
-      &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
    &lt;/head&gt;
-   &lt;body&gt;
-   &lt;/body&gt;
 &lt;/html&gt;</code></pre><p>&nbsp;</p>
 					<div class="notes">
 						<p>Basically, you find the URL of a jQuery file, and tell your Web page to load it. Google is willing to pay the costs of sending this file to millions of people, and lets you use the file on their computers for free. </p>
@@ -133,25 +129,22 @@
 					</div>
 				</section>
 
-
 				<section>
 					<h2>Creating your JavaScript file</h2>
 					<ol>
 						<li>In your "js" folder, create a "script.js" file</li>
-						<li>In your "index.html", type in the code after jQuery</li>
+						<li>In your "index.html", add a script tag after jQuery</li>
 					</ol>
 <p class="disappear">&nbsp;</p><pre class="disappear"><code contenteditable>&lt;html&gt;
    &lt;head&gt;
-      &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
-      &lt;!-- Add this line next --&gt;
+      &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+      &lt;!-- Add the following line --&gt;
       &lt;script src="js/script.js"&gt; &lt;/script&gt;
    &lt;/head&gt;
-   &lt;body&gt;
-   &lt;/body&gt;
 &lt;/html&gt;</code></pre><p>&nbsp;</p>
 					<div class="notes">
 						<p>Basically, you find the URL of a jQuery file, and tell your Web page to load it. Google is willing to pay the costs of sending this file to millions of people, and lets you use the file on their computers for free. </p>
-						<p>So: Google jQuery. Go to page. Copy the URL. </p>
+						<p>So: Google jQuery. Go to page. Copy the URL. </p>   
 					</div>
 				</section>
 
@@ -182,11 +175,17 @@
 				<section>
 					<h2>Try it!</h2>
 					<ol>
-						<li>Go to codewithmemiami.com/jquery</li>
+						<li>Go to <a href="http://codewithme.us/jquery">codewithme.us/jquery</a></li>
 						<li>Inspect the page, and click on Console</li>
-						<li>Type this command hit enter: <strong>jQuery("img").fadeOut();</strong></li>
+						<li>Type this and hit enter: <strong>jQuery("img").fadeOut();</strong></li>
 						<li>Then try this: <strong>jQuery("img").fadeIn();</strong></li>
 					</ol>
+				</section>
+
+
+				<section>
+					<p class="special-margin special-smaller" style="font-size: 100px; margin: 140px 0px 0px;"><a href="http://jquery.com" target="_blank" style="font-size: 100px; margin: 150px 0 40px 0; display: inline-block;">jquery.com</a></p>
+					<p>Helpful reference for jQuery.</p>
 				</section>
 
 				<section>
@@ -194,7 +193,11 @@
 					<p style="color: #999999; font-size: 60px; margin-top: 50px; margin-bottom: 50px;">jQuery("img").fadeOut();</p>
 					<p class="fragment" style="color: #00B19D; font-size: 60px; margin-top: 50px; margin-bottom: 50px;">sisi("door").open();</p>
 					<p class="fragment" style="color: #00B19D; font-size: 60px; margin-top: 50px; margin-bottom: 50px;">sisi("door").close();</p>
+					<div class="notes">
+						<li>jQuery is a program, a kind of very talented butler or assistant. So let's take a real life analogy. Let's say Sisi is a library like jQuery.</li>
+					</div>
 				</section>
+
 
 				<section>
 					<h2>What about the timing?</h2>
@@ -216,10 +219,8 @@
 				</section>
 
 				<section>
-					<h2>Walking through an example</h2>
-
 <div style="text-align: left;">index.html</div>
-					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithmemiami.com/images/owl.gif&quot; /&gt;
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithme.us/images/owl.gif&quot; /&gt;
 &lt;p&gt;Click to shoo away the owl! &lt;/p&gt;</code></pre>
 					<div style="text-align: left;">script.js</div>
 					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">jQuery("p").click(function() {
@@ -228,16 +229,6 @@
 					<iframe src="jquery-event.html" width=500 height=500 scrolling="no"></iframe>
 				</section>
 
-				<section>
-					<h2>When using jQuery, ask yourself:</h2>
-					<ul>
-						<li class="fragment">What part of the page is the user interacting with? </li>
-						<li class="fragment">What are they doing to it? </li> 
-						<li class="fragment">In response, what part of the page do you want to change?  </li>
-						<li class="fragment">How do you want to change it?  </li>
-					</ul>
-				</section>
-				
 				<section>
 					<h2>When using jQuery, ask yourself:</h2>
 					<ul>
@@ -257,7 +248,7 @@
 					<p style="clear; both"></p>
 					<p style="clear; both"></p>
 					<div style="text-align: left;">index.html</div>
-					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithmemiami.com/images/owl.gif&quot; /&gt;
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithme.us/images/owl.gif&quot; /&gt;
 &lt;p&gt;Click to shoo away the owl! &lt;/p&gt;</code></pre>
 					<div style="text-align: left;">script.js</div>
 					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">jQuery("______").______(function() {
@@ -291,7 +282,7 @@
 					</ul>
 					<p style="clear; both"></p>
 					<div style="text-align: left;">index.html</div>
-					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithmemiami.com/images/owl.gif&quot; /&gt;
+					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">&lt;img src=&quot;http://codewithme.us/images/owl.gif&quot; /&gt;
 &lt;p&gt;Click to shoo away the owl! &lt;/p&gt;</code></pre>
 					<div style="text-align: left;">script.js</div>
 					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px;">jQuery("p").click(function() {
@@ -301,24 +292,25 @@
 
 
 				<section>
-					<h2>Why computers are dumb</h2>
-					<div style="text-align: left;">index.html</div>
-					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">&lt;html&gt;
+					<div style="text-align: left; margin-top: -50px">index.html</div>
+					<pre style="margin-left: 0px; font-size: .85em;"><code contenteditable style="margin-left: 0px; ">&lt;html&gt;
  &lt;head&gt;
-   &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
-   &lt;script src="script.js"&gt;&lt;/script&gt;
+   &lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script src="js/script.js"&gt;&lt;/script&gt;
  &lt;/head&gt;
  &lt;body&gt;
-   &lt;img src=&quot;http://codewithme.com/images/owl.gif&quot; /&gt;
+   &lt;img src=&quot;http://codewithme.us/images/owl.gif&quot; /&gt;
    &lt;p&gt;Click to shoo away the owl!&lt;/p&gt;
  &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 					<div style="text-align: left;">script.js</div>
-					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">jQuery("p").click(function() {
+					<pre style="margin-left: 0px; font-size: .85em;"><code contenteditable style="margin-left: 0px;">jQuery("p").click(function() {
 	jQuery("img").fadeOut();
 });</code></pre>
-
-</section>
+				<div class="notes">
+					Why doesn't it work? Buecause there is no paragraph yet! It's as if Sisi told me, hand out the papers to the students -- but the students weren't here yet. To the computer, it doesn't make sense.
+				</div>
+				</section>
 
 
 <section>
@@ -326,24 +318,24 @@
 </section>
 
 				<section>
-					<div style="text-align: left;">index.html</div>
-					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">&lt;html&gt;
+					<div style="text-align: left;margin-top: -50px">index.html</div>
+					<pre style="margin-left: 0px; font-size: .85em;"><code contenteditable style="margin-left: 0px;">&lt;html&gt;
  &lt;head&gt;
-   &lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;&gt;&lt;/script&gt;
-   &lt;script src="script.js"&gt;&lt;/script&gt;
+   &lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script src="js/script.js"&gt;&lt;/script&gt;
  &lt;/head&gt;
  &lt;body&gt;
-   &lt;img src=&quot;http://codewithme.com/images/owl.gif&quot; /&gt;
+   &lt;img src=&quot;http://codewithme.us/images/owl.gif&quot; /&gt;
    &lt;p&gt;Click to shoo away the owl!&lt;/p&gt;
  &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 					<div style="text-align: left;">script.js</div>
-					<pre style="margin-left: 0px;"><code contenteditable style="margin-left: 0px; font-size: 18px;">jQuery(document).ready(function() {
+					<pre style="margin-left: 0px; font-size: .85em;"><code contenteditable style="margin-left: 0px;">jQuery(document).ready(function() {
 	jQuery("p").click(function() {
 		jQuery("img").fadeOut();
 	});
 });</code></pre>
-
+					
 </section>
 						
 				<section>

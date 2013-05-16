@@ -47,10 +47,73 @@
 						<div class="copyright">&copy; <span>2013</span></div>
 					</div>
 				</section>
+
+				<section>
+					<h2>What is layout?</h2>
+					<!-- <p>Arranging your content on a web page.</p> -->
+					<div class="stack" style="width: 700px">
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/no-layout.png" alt="">
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/comparison.png" alt="">
+						</div>	
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/highlight.png" alt="">
+						</div>			
+					</div>
+					<div class="notes">
+						<p>Many of you are interested in designing pages, or making your articles look better. Layout is a big part of that.</p>
+					</div>
+
+				</section>
+
+				<section>
+					<h2>What you can do with layout</h2>
+					<ul>
+						<!-- <li><a href="http://www.grantland.com/story/_/id/9175394/out-great-alone">Out in the Great Alone</a></li> -->
+						<li><a href="http://www.washingtonpost.com/sf/sports/wp/2013/02/27/cyclings-road-forward/" target='_blank'>Cycling's Road Forward</a></li>
+						<li><a href="http://www.nytimes.com/interactive/2013/02/15/world/europe/16meteorite_videogrid.html" target='_blank'>A Meteor From Six Vantage Points</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Layout on the web</h2>
+					<div class="stack single" style="width: 700px">
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/0_line.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/1_cutting.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/2_hey.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/3_boxes.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/4_floating.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/5_pulling.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/6_floated.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/floats/7_flowing.png" />
+						</div>
+					</div>
+					<img src="" alt="">
+					<div class="notes">
+						<p>Normally, elements on a page are like people standing in line at the movie theater. First come, first serve, and you're not going to just walk up next to someone -- if you get there late, you're going to the end of the line.</p>
+					</div>
+				</section>
 				
 				<section class="small">
-					<h2>What is a float?</h2>
-					<img src="images/magazine-floats.png">
+					<h2>Introducing floats</h2>
+					<img src="images/presentations/css-layout/web-floats.png">
 					<div class="credit">Adapted from CSS Tricks' "<a href="http://css-tricks.com/all-about-floats/">All About Floats</a>."</div>
 					<div class="notes">
 						<p>
@@ -59,6 +122,37 @@
 						<p>
 							You've noticed until now that, every HTML paragraph, header, image is laid out consecutively, one on top of another. Floats let lay out content side by side.
 						</p>
+					</div>
+				</section>
+
+
+
+
+				<section>
+					<h2>How floats work</h2>
+					<div class="stack single" style="width: 700px">
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/walkthrough/1_start.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/walkthrough/2_boxes.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/walkthrough/3_highlight.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/walkthrough/4_pull.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/walkthrough/5_flow.png" />
+						</div>
+						<div class="fragment layer">
+							<img src="images/presentations/css-layout/walkthrough/6_line.png" />
+						</div>
+					</div>
+					<img src="" alt="">
+					<div class="notes">
+						<p>Normally, elements on a page are like people standing in line at the movie theater. First come, first serve, and you're not going to just walk up next to someone -- if you get there late, you're going to the end of the line.</p>
 					</div>
 				</section>
 				
@@ -102,7 +196,7 @@ Scientists have recently identified a shocking new truth: cats are far deadlier 
 &lt;/p&gt;</code></pre>
 						<pre class="double-editor wide" style="width:220px;"><code>img {
   float: right;
-}x</code></pre>	
+}</code></pre>	
 					</div>
 
 <div class="bottom narrow plain clearfix">
@@ -173,7 +267,7 @@ Scientists have recently identified a shocking new truth: cats are far deadlier 
 }
 
 .container {
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   padding: 10px;
 }</code></pre>	
 					</div>
