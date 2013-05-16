@@ -47,31 +47,61 @@
 						<div class="copyright">&copy; <span>2013</span></div>
 					</div>
 					<div class="notes">
-						All right, let's review a familiar slide.
+						[go to next slide]
 					</div>
 				</section>
 
-				<section class="small">
-					<img src="images/css.png"/>
+				<section data-markdown class="small">
+					<pre><code contenteditable style="margin-top: 20px;">
+
+						p {
+							font-size: 18px;
+							font-family: Georgia;
+						}
+
+
+					</code></pre>
 					<div class="notes">
-						<p>If you remember from earlier, a selector tells you which tags to affect, like h1.  To get technical for one moment, those are called “type selectors.”  Basically, those selectors match up with the names of actual HTML elements, like the ones you’ve learned, such as h1 and p.</p>
-						<p>But you can have multiple paragraphs on a page right?  What if you want to style one p tag, but not another?  Then a general CSS for p won’t work as well.</p>
-						<p>That’s where CSS classes come in. They allow you to give your html tags specific names, so you can refer to whichever tags you want to. Let’s look at an example.</p>
+						<p>All right, so you've done some CSS. This looks pretty familiar doesn't it? Easy peasy.</p>
+						<p>What you've been doing, is using CSS to order around the HTML tags you've written, like "p" or "h1".</p>
+						<p>But you can have multiple paragraphs on a page right? What if you want to style one p tag, but not the rest? Think of your byline, or your photo captions. They shouldn't look like the main article text.</p>
+						
+						<p>That’s where CSS classes come in. They let you make up names for individual html tags. [PAUSE] Think of styling HTML like talking to people. You can talk to a group of people at once, or you can talk to a specific person by using his or her name.</p>
 					</div>
 				</section>
 
-				<section class="small">
-					<img src="images/css2.png"/>
+				<section>
+					<h2 class="vertical-center">Any mentors in the house?</h2>
 					<div class="notes">
-						<p>Okay, let's see, what's the difference? It's the p.byline section right?</p>
-						<p>So my goal here is, I want the byline to be gray, but I don't want all my paragraph text to be gray, so I created a special CSS class for it called "byline" because it's a name that's very descriptive. So let's see this step-by-step.</p>
-						</div>
+						<p>Have a few mentors come up. They'll each hold up a sheet of paper with some attributes. We'll ask them to do different things like: turn around, jump, hide.</p>
+					</div>
+				</section>
+
+				<section data-markdown>
+					<div style="float:left; width: 680px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
+					<div style="clear:both;"></div>
+					<pre class="double-editor" style="width:660px;"><code contenteditable style="width:640px;">
+  &lt;p&gt;By David Foster Wallace&lt;/p&gt;
+  &lt;p&gt;Lobsters are basically giant sea-insects.&lt;/p&gt;
+
+					</code></pre>
+					<pre class="double-editor" style="width:240px;"><code contenteditable>p {
+					  text-decoration: 
+					  underline;
+					}
+					</code></pre>	
+					<input type="text"><input type="text"><input type="text"><input type="text">
+					<div style="clear:both;"></div>
+					<p class="al" style="margin-top: 15px;"><strong>How do I create a CSS class?</strong></p>
+					<p class="al fragment" style="margin-top: 20px;">Give any HTML tag a name by adding<br/>&lt;p class="make-up-a-name"&gt;</p>
+					<p class="al fragment" style="margin-top: 20px;"><strong>How do I tell it what to do?</strong></p>
+					<p class="al fragment" style="margin-top: 20px;">Refer to any class in your CSS by typing<br/>.make-up-a-name{}</p>
 				</section>
 		
 				<section data-markdown>
 					<div style="float:left; width: 680px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
 					<div style="clear:both;"></div>
-					<pre class="double-editor" style="width:660px;"><code style="width:640px;">&lt;html&gt;
+					<pre class="double-editor" style="width:660px;"><code contenteditable style="width:640px;">&lt;html&gt;
    &lt;head&gt;
 	  &lt;title&gt;Consider the lobster&lt;/title&gt;
 	  &lt;link rel="stylesheet" href="css/styles.css"&gt;
@@ -83,7 +113,7 @@
    &lt;/body&gt;
 &lt;/html&gt;	
 					</code></pre>
-					<pre class="double-editor" style="width:240px;"><code>p {
+					<pre class="double-editor" style="width:240px;"><code contenteditable>p {
    font-size: 24px;
 }
 					</code></pre>	
@@ -112,7 +142,7 @@
    font-size: 24px;
 }
 
-p.<span style="color: orange;">byline</span> {
+.<span style="color: orange;">byline</span> {
    font-size: 20px;
 }
 					</code></pre>	
@@ -129,15 +159,14 @@ p.<span style="color: orange;">byline</span> {
 					<pre class="double-editor" style="width:660px;"><code style="width:640px;">&lt;body&gt;
 	&lt;h1 class="<span style="color: lightgreen;">green</span>"&gt;Consider the lobster&lt;/h1&gt;
 	&lt;p class="<span style="color: #E3CEAB;">byline</span>"&gt;By David Foster Wallace&lt;/p&gt;
-	&lt;p&gt;The point is that green lobsters are basically
-	giant sea-insects.&lt;/p&gt;
+	&lt;p&gt;The point is that lobsters are basically giant sea-insects.&lt;/p&gt;
 &lt;/body&gt;
 					</code></pre>
 					<pre class="double-editor" style="width:240px;"><code>p {
    font-size: 24px;
 }
 
-p.byline {
+.byline {
    font-size: 20px;
 }
 
@@ -158,15 +187,14 @@ p.byline {
 					<pre class="double-editor" style="width:660px;"><code style="width:640px;">&lt;body&gt;
 	&lt;h1 class="<span style="color: lightgreen;">green</span>"&gt;Consider the lobster&lt;/h1&gt;
 	&lt;p class="<span style="color: #E3CEAB;">byline</span>"&gt;By David Foster Wallace&lt;/p&gt;
-	&lt;p class="<span style="color: lightgreen;">green</span>"&gt;The point is that green lobsters are basically
-	giant sea-insects.&lt;/p&gt;
+	&lt;p class="<span style="color: lightgreen;">green</span>"&gt;The point is that lobsters are <br/>basically giant sea-insects.&lt;/p&gt;
 &lt;/body&gt;
 					</code></pre>
 					<pre class="double-editor" style="width:240px;"><code>p {
    font-size: 24px;
 }
 
-p.byline {
+.byline {
    font-size: 20px;
 }
 
@@ -205,7 +233,7 @@ p.byline {
    font-size: 24px;
 }
 
-p.byline {
+.byline {
    font-size: 20px;
 }
 
@@ -230,11 +258,11 @@ p.byline {
 					<div style="margin: 0 auto; width: 900px;">
 						<div style="float:left; width: 900px; text-align:left;">styles.css</div>
 						<pre style="width:300px; float:left;"><code style="width: 300px; margin-left:0px;">
-p.byline {
+p {
    font-size: 20px;
 }
 
-.bigger-font {
+.byline{
 	font-size: 30px;
 }
 						</code></pre>	
@@ -246,7 +274,8 @@ p.byline {
 						<div style="clear:both;"></div>
 						<div class="fragment">
 							<p style="font-size: 30px; margin: 20px 0 0 0; text-align:left;">If you have an HTML element like this:</p>
-							<pre style="width:900px;"><code style="width:900px;margin-left:0px;">&lt;p class="byline bigger-font"&gt;By David Foster Wallace&lt;/p&gt;</code></pre>
+							<pre style="width:900px;"><code style="width:900px;margin-left:0px;">&lt;p class="byline"&gt;By David Foster Wallace&lt;/p&gt;</code></pre>
+							<p class="al" style="font-size:30px; margin-top:35px;">What's the font size? 20px? or 30px?</p>
 						</div>
 					</div>
 					<div class="notes">
@@ -262,23 +291,24 @@ p.byline {
 					<div style="margin: 0 auto; width: 900px;">
 						<div style="float:left; width: 900px; text-align:left;">styles.css</div>
 						<pre style="width:300px; float:left;"><code style="width: 300px; margin-left:0px;">
-p.byline {
+p {
    font-size: 20px;
 }
 
-.bigger-font {
+.byline {
 	font-size: 30px;
 }
 						</code></pre>	
 						
 						<div style="float:left; width: 550px; margin: 0 0 0 50px;">
-							<p class="al" style="font-size:20px; margin-top: 80px;">By David Foster Wallace<span style="padding: 0 0 0 7px; font-size: 40px; color: green;">&#x2713;</span></p>
+							<p class="al" style="font-size:20px; margin-top: 80px;">By David Foster Wallace</p>
 							<p class="al" style="font-size:30px; margin-top: 85px;">By David Foster Wallace</p>
 						</div>
 						<div style="clear:both;"></div>
 						<div>
 							<p style="font-size: 30px; margin: 20px 0 0 0; text-align:left;">If you have an HTML element like this:</p>
-							<pre style="width:900px;"><code style="width:900px;margin-left:0px;">&lt;p class="byline bigger-font"&gt;By David Foster Wallace&lt;/p&gt;</code></pre>
+							<pre style="width:900px;"><code style="width:900px;margin-left:0px;">&lt;p class="byline"&gt;By David Foster Wallace&lt;/p&gt;</code></pre>
+							<p class="al" style="font-size:30px; margin-top:35px;">What's the font size? 20px? or <span class="number-highlight">30px</span>?</p>
 						</div>
 					</div>
 				</section>
@@ -288,13 +318,12 @@ p.byline {
 					<p>Seeing cascades with the inspector</p>
 				</section>
 
-
 				<section>
 					<h2>With your mentors:</h2>
 					
 					<ul>
-						<li>Practice <a href="http://codewithmemiami.com/exercises.shtml#lesson-5a">writing CSS classes</li>
-						<li>Do exercise #5b: <a href="http://codewithmemiami.com/exercises.shtml#lesson-5b">Design it Twitter-style, part one</li>
+						<li>Practice <a href="http://codewithme.us/portland/exercises.html#lesson-5a">writing CSS classes</li>
+						<li>Do exercise #5b: <a href="http://codewithme.us/portland/exercises.html#lesson-5b">Design it Twitter-style, part one</li>
 					</ul>
 
 					<!-- <h2 class="marq" style="margin-top:100px;"><marquee>&lt;BLINK&gt;Lunch is here! Lunch is here! Lunch is here! Lunch is here! Lunch is here!&lt;/BLINK&gt;</marquee></h2> -->

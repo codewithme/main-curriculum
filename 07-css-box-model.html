@@ -40,23 +40,12 @@
 			
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+				<section class="small">
 					<h1 class="opening special-margin">The CSS box model</h1>
 					<div class="small-logo-container disappear">
 						<img src="images/basic-logo-tan-bg.png"/>
 						<div class="copyright">&copy; <span>2013</span></div>
 					</div>
-				</section>
-				
-				<section class="small">
-					<h2>The box model</h2>
-
-					<div class="box-model-container">
-
-						<p class="box-model">"Computers are good at following instructions, <br />but not at reading your mind." &mdash;Donald Knuth</p>
-
-					</div>
-
 					<div class="notes">
 						<p>
 							As you've begun to style CSS, you've probably wanted to do things like add borders, or spacing, or drop shadows, around your paragraphs and headlines. That's done through what's called the box model. 
@@ -64,103 +53,221 @@
 						<p>
 							Why is it the "box" model? Because the structure of HTML elements is a box. If you inspect an element, it's always rectangular, and often wider than the text within it.
 						</p>
+					</div>
 				</section>
 
-				<section class="notes">
-					<h2>Margin, border, padding</h2>
+				<section>
+					<h2 class="vertical-center">What the Box Model can do</h2>
+					<h3 style="margin-top:20px;"><a href="http://www.grantland.com/story/_/id/9175394/out-great-alone">Out in the Great Alone</a></h3>
+				</section>
+
+				<section>
+					
+					<div class="stack" style="width: 700px">
+						
+						<div class="layer">
+							<img src="images/presentations/box-model/basic.png" alt="">
+						</div>
+						<div class="layer fragment">
+							<img src="images/presentations/box-model/annotated.png" alt="">
+						</div>
+					</div>
+
+				</section>
+
+				<section>
+					<h1 class="vertical-center">Width</h1>
+					<center>
+						<div class="width" style="width:220px;">
+							<span class="border left"></span>
+							<hr style="width:215px;">
+							<span class="border right"></span>
+						</div>
+					</center>
+					<div class="clear"></div>
+					<p>215px</p>
+				</section>
+
+				<section>
+					<p class="vertical-center">All text on a webpage is within a box. All boxes have a width.</p>
+					<center>
+						<div class="width" style="width:935px;">
+							<span class="border left"></span>
+							<hr style="width:930px;">
+							<span class="border right"></span>
+						</div>
+					</center>
+					<div class="clear"></div>
+					<p>930px</p>
+				</section>
+
+				<section>
+					<center>
+						<p style="width: 250px; margin-top:13%;">Set the width of the box differently and your text will oblige.</p>
+						<div class="width" style="width:255px;">
+							<span class="border left"></span>
+							<hr style="width:250px;">
+							<span class="border right"></span>
+						</div>
+					</center>
+					<div class="clear"></div>
+					<p class="fragment">width: 250px;</p>
+				</section>
+
+				<section>
+					<h1 class="vertical-center" style="border:20px solid #d8d4af;">Border</h1>
+				</section>
+
+				<section>
+					<div style="float:left; margin-top:5%;">
+						<p style="border:100px solid #d8d4af; width: 250px;">Sometimes, I'd like my text to have a big old border.</p>
+						<p class="fragment" style="margin-top:20px; font-size:30px; color: #919191;">border: <strong style="color:black;">100px</strong> solid #d8d4af;</p>
+					</div>
+					<div style="margin:15% 0 0 30px; float:left;">
+						<p style="border:10px solid #d8d4af; width: 400px; ">Other times I want to tone it down.</p>
+						<p class="fragment" style="margin-top:20px; font-size:30px; color: #919191;">border: <strong style="color:black;">10px</strong> solid #d8d4af;</p>
+					</div>
+
+					
+					<div class="clear"></div>
+
+				</section>
+
+				<section class="border-options">
+					<div style="float:left; margin-left:15%;">
+						<p style="border:10px solid #d8d4af; width: 250px;">Most of the time I'm solid.</p>
+						<p style="border:10px dashed #d8d4af; width: 250px;">On occassion I want to look like a coupon.</p>
+						<p style="border:10px groove #d8d4af; width: 250px;">Most of these are out of style.</p>
+						<p style="border:10px inset #d8d4af; width: 250px;">But you can tell I've got options.</p>
+					</div>
+					<div style="float:left; font-size: 25px; margin-left: 30px; text-align:left;">
+						<p style="height: 76px; padding-top:30px; color: #919191;">border:10px <strong style="color:black;">solid </strong>#d8d4af;</p>
+						<p class="fragment" style="height: 99px; padding-top:50px; color: #919191;">border:10px <strong style="color:black;">dashed</strong> #d8d4af;</p>
+						<p class="fragment" style="height: 76px; padding-top:30px; color: #919191;">border:10px <strong style="color:black;">groove</strong> #d8d4af;</p>
+						<p class="fragment" style="height: 76px; padding-top:30px; color: #919191;">border:10px <strong style="color:black;">inset </strong>#d8d4af;</p>
+					</div>
+				</section>
+
+				<section>
+					<center>
+						<p style="border:10px solid #d8d4af; width: 400px; margin-top:20%;">But listen, the border is really cramping my style. Get a little further away from the text, would'ya?</p>
+					</center>
+				</section>
+
+				<section>
+					<h1 style="border:20px solid #d8d4af; padding: 50px; margin-top: 15%">Padding</h1>
+					<p>(Scaring away borders since ... 20 years ago)</p>
+				</section>
+
+				<section>
+					<center>
+						<p style="border:10px solid #d8d4af; width: 400px; margin-top:20%; padding: 50px;">Phew. Now I've got some room to breathe.</p>
+						<p class="fragment">padding: 50px;</p>
+					</center>
+				</section>
+
+				<section>
+					<div style="margin:20% 0 0 0; float:right;">
+						<p style="border:10px solid #00b29e; width: 300px; padding: 10px; font-size: 28px;">Hi Dad. <br/>Can you uh, not hug me every time you see me?</p>
+					</div>
+					<p style="border:10px solid #d8d4af; width: 350px; margin-top:20%; padding: 50px; float:right;">Oh look! <br/>It's my daughter Sisi!</p>
+				</section>
+
+				<section>
+					<h1 style="border:20px solid #d8d4af; margin: 10% 0 200px 0;">Margin</h1>
+					<p>(Your line of defense when other boxes stand too close.)</p>
+				</section>
+
+				<section>
+					<p style="border:10px solid #00b29e; width: 300px; margin-top:20%; padding: 10px; float:right;">Listen, you just gotta move over.</p>
+					<p style="background-color: white; width: 80px; margin-top:20%; float:right; height: 127px;"></p>
+					<p style="border:10px solid #d8d4af; width: 400px; margin-top:20%; padding: 50px; float:right;">Wait a second...</p>
+					<div class="clear"></div>
+					<p style="margin-top: 50px;">(Sisi used her power "margin-left:80px"!)</p>
+				</section>
+
+				<section>
+					<center>
+						<p style="border:10px solid #d8d4af; width: 400px; padding: 30px; margin:10% 0 0 0;">Hi Sisi!</p>
+						<div>
+							<p style="border:10px solid #d8d4af; width: 155px; padding: 30px; float:left; margin:0px;">Hi Sisi!</p>
+							<p style="border:10px solid #00b29e; width: 400px; padding: 30px; float:left; margin:0px;">Oh no, family reunion.</p>
+							<p style="border:10px solid #d8d4af; width: 155px; padding: 30px; float:left; margin:0px;">Hi Sisi!</p>
+						</div>
+						<div class="clear"></div>
+						<p style="border:10px solid #d8d4af; width: 400px; padding: 30px; margin:0px;">Hi Sisi!</p>
+						
+						<p style="margin-top: 50px;">(What should I do?)</p>
+					</center>
+				</section>
+
+				<section>
+					<center>
+						<p style="border:10px solid #d8d4af; width: 400px; padding: 30px; margin:0px;">Hi Sisi!</p>
+						<p style="background-color: white; width: 480px; height: 50px; margin:0px;"></p>
+						<div>
+							<p style="border:10px solid #d8d4af; width: 125px; padding: 30px 20px; float:left; margin:0px;">Hi Sisi!</p>
+							<p style="background-color: white; width: 50px; height: 122px; margin:0px; float:left;"></p>
+							<p style="border:10px solid #00b29e; width: 400px; padding: 30px; float:left; margin:0px;">Margin power!</p>
+							<p style="background-color: white; width: 50px; height: 122px; margin:0px; float:left;"></p>
+							<p style="border:10px solid #d8d4af; width: 125px; padding: 30px 20px; float:left; margin:0px;">Hi Sisi!</p>
+						</div>
+						<div class="clear"></div>
+						<p style="background-color: white; width: 480px; height: 50px; margin:0px;"></p>
+						<p style="border:10px solid #d8d4af; width: 400px; padding: 30px; margin:0px;">Hi Sisi!</p>
+						
+						<p style="margin-top: 50px;">margin: 50px;</p>
+					</center>
+				</section>
+
+				<section class="small">
+					<center>
+						<p style="border:10px solid #d8d4af; width: 400px; padding: 30px; margin:0 0 50px 0;">Hi Sisi!</p>
+						<div>
+							<p style="border:10px solid #d8d4af; width: 125px; padding: 30px 20px; float:left; margin:0px;">Hi Sisi!</p>
+							<p style="border:10px solid #00b29e; width: 400px; padding: 30px; float:left; margin:0px 50px;">Margin power!</p>
+							<p style="border:10px solid #d8d4af; width: 125px; padding: 30px 20px; float:left; margin:0px;">Hi Sisi!</p>
+						</div>
+						<div class="clear"></div>
+						<p style="border:10px solid #d8d4af; width: 400px; padding: 30px; margin:50px 0 0 0;">Hi Sisi!</p>
+						
+						<p style="margin-top: 50px;">margin: 50px;</p>
+					</center>
+
+					<div class="notes">
+						<p>But margins don't have color, so in reality it looks like this. Okay, so let's review.</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Width, margin, border, padding</h2>
 					
 					<div class="box-model-container">
-
-						<p class="box-model">"Computers are good at following instructions, <br />but not at reading your mind." &mdash;Donald Knuth</p>
 						<img src="images/box-model.png" />
 
 						<div class="notes">
-
+							<p>So here are all the parts of the model? (Review all) </p>
+							<p>If you need help remembering, just imagine a puffy dress -- the padding is the stuff on the inside of the dress, the border is the hemline, and the margin is the space between each person. The person, like the content, is the in the center.</p>
+							<p>So let's review the syntax of how to actually use the model.</p>
 						</div>
-
 					</div>
-
-					<div class="notes">
-						<p>So what are the parts of the model? There's the margin, which is what's on the outside of the box. There's the border. There's the padding on the side. </p>
-						<p>If you need help remembering, just imagine a puffy dress -- the padding is the stuff on the inside of the dress, the border is the hemline, and the margin is the space between each person. The person, like the content, is the in the center.</p>
-						<p>There's also width, which can limit how wide your element is; and height, which gets weird, because text may get cut off.</p>
-					</div>
-
 				</section>
 
 				<section class="small">
-					<h2>Box model syntax</h2>
-					
-					<div class="disappear">
-						<div style="float:left; width: 520px; text-align:left;">index.html</div><div style="float:left;">styles.css</div>
-						<div style="clear:both;"></div>
-						<pre class="double-editor" style="width:500px;"><code style="width:480px;">&lt;p class=&quot;box-model&quot;&gt;
-    &quot;Computers are good at following instructions, but not at reading your mind.&quot; &mdash;Donald Knuth
-&lt;/p&gt;
-</code></pre>
-						<pre class="double-editor" style="width:400px;"><code>.box-model {
-    margin: 20px;
-    border: 5px solid #D8D4AF;
-    padding: 20px;
-    width: 600px;
-    background-color:  #D8D4AF;
-}</code></pre>	
-					</div>
-
-					<div class="bottom plain clearfix disappear">
-						<p class="box-model">
-						    "Computers are good at following instructions, but not at reading your mind." —Donald Knuth
-						</p>
-
-					</div>
-
-					<div class="notes">
-						<p>Margin is specified in pixels. We'll show you more ways in a moment.</p>
-						<p>Border has three parts: One is the width; one is the pattern; one is the color. There are patterns like dashed or dotted.</p>
-						<p>Padding is specified like margin.</p>
-					</div>
-
-				</section>
-
-
-				<section class="small">
-					<h2>Syntax for margin, border, padding</h2>
+					<h2>Let's look at some syntax</h2>
 					<ul>
 						<li class="syntax">margin-top: 20px;</li>
 						<li class="syntax fragment">margin-right: 20px;</li>
 						<li class="syntax fragment">padding-right: 20px;</li>
 						<li class="syntax fragment">border-right: 1px dotted black;</li>
-						<li class="syntax fragment">margin: 20px 30px 40p 50px</li>
+						<li class="syntax fragment">margin: 20px 30px 40p 50px;</li>
 						<li class="syntax fragment">margin: <em>top right bottom left (TRBL)</em></li>
 					</ul>
 					<div class="notes">
-						<p>(Walk through bullet points.)</p>
+						<p>(Walk through bullet points. Ask students if they can predict what would happen.)</p>
 						<p>Any questions on the box model?</p>
 						<p>So I want to cover one topic related to the box model.</p>
 					</div>
-				</section>
-
-				<section>
-					<h2>The box model, while coding</h2>
-
-					<div style="position: relative">
-						<div style="position: absolute">
-							<img src="images/box-model-steps-1.png">
-						</div>
-						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
-							<img src="images/box-model-steps-2.png">
-						</div>
-						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
-							<img src="images/box-model-steps-3.png">
-						</div>
-						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
-							<img src="images/box-model-steps-4.png">
-						</div>
-						<div class="fragment" style="position: absolute; background-color: #F3F1DC;">
-							<img src="images/box-model-steps-5.png">
-						</div>
-					</div>
-
 				</section>
 
 				<section class="small">
@@ -248,8 +355,9 @@
 				<section>
 					<h2>With your mentor</h2>
 					<ul class="presentation-7">
-						<li>Practice <a href="http://codewithmemiami.com/exercises.shtml#lesson-7">the box model</a> by trying out margin, padding, width, border and background-color in your practice file. </li>
-						<li><strong>Do exercise #7</strong>: <a href="http://codewithmemiami.com/exercises.shtml#exercise-7">Design it Twitter-style, part two</a>. </li> 
+						<li>Think you understand how the box model works? Let's see if you're ready to be <a href="http://codewithme.us/exercises/box-model-ninja.html">A BOX MODEL NINJA!</a></li>
+						<li>Practice <a href="http://codewithme.us/portland/exercises.html#lesson-7">the box model</a> by trying out margin, padding, width, border and background-color in your practice file. </li>
+						<li><strong>Do exercise #7</strong>: <a href="http://codewithme.us/portland/exercises.html#exercise-7">Design it Twitter-style, part two</a>. </li> 
 						</li>
 						<li>Work on your project.</li>
 					</ul>	
