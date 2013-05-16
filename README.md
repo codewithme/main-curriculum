@@ -7,6 +7,6 @@ While a variety of our presentations were all updated slightly, the Portland cur
 * CSS Layout
 
 ## Want to teach using this curriculum?
-We offer our teaching material under a [Creative Commons license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US): <strong>AAttribution-NonCommercial-ShareAlike 3.0 Unported</strong>, which means you can share and adapt our work, as long as you attribute <em>Code with me</em>, only distributed your altered work under the same license, and don't use it for commercial purposes. If you have a commercial project in mind, please [contact us](mailto:team@codewithme.us).
+We offer our teaching material under a [Creative Commons license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US): <strong>AAttribution-NonCommercial-ShareAlike 3.0 Unported</strong>, which means you can share and adapt our work, as long as you attribute <em>Code with me</em>, only distribute your altered work under the same license, and don't use it (or altered versions of it) for commercial purposes. If you have a commercial project in mind, please [contact us](mailto:team@codewithme.us).
 
 If you use our curriculum, [let us know](mailto:team@codewithme.us)! We're excited to see what parts you use, and in what ways.
